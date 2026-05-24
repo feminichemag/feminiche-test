@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What's New with Diva Bleach? — FemiNICHE</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F5EBE0;
+      --parchment: #E8D8C8;
+      --green: #6B7A2A;
+      --green-dark: #6B2045;
+      --green-light: #D4A0A8;
+      --sand: #8A6858;
+      --ink: #4A1528;
+      --dark: #3D0F28;
+      --muted: #8A6858;
+      --divider: #D4A0A8;
+      --neon: #8B3558;
+      --neon-dim: #6B2045;
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 120px; }
+    body { background-color: var(--cream); color: var(--ink); font-family: 'Hoefler Text', 'Georgia', serif; font-size: 17px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+
+    .announcement { background: var(--ink); color: var(--cream); padding: 9px 0; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; overflow: hidden; white-space: nowrap; }
+    .announcement-track { display: inline-flex; animation: ticker 32s linear infinite; }
+    .announcement-track:hover { animation-play-state: paused; }
+    .announcement-item { display: inline-flex; align-items: center; gap: 16px; padding: 0 36px; }
+    .announcement-item span { color: #FF2D8A; font-style: italic; letter-spacing: 0.04em; text-transform: none; font-size: 13px; }
+    .announcement-dot { color: var(--green-light); opacity: 0.6; }
+    @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    header { background: var(--cream); border-bottom: 2px solid var(--ink); padding: 0 48px; position: sticky; top: 0; z-index: 100; }
+    .header-top { display: flex; align-items: center; justify-content: space-between; padding: 16px 0 12px; border-bottom: 1px solid var(--divider); }
+    .logo { font-size: 36px; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; line-height: 1; }
+    .logo span { color: var(--neon); }
+    .header-tagline { font-style: italic; font-size: 14px; color: var(--muted); }
+    .header-actions { display: flex; align-items: center; gap: 18px; }
+    .btn-submit { background: var(--neon); color: #fff; padding: 10px 24px; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; border: none; cursor: pointer; transition: background 0.18s; display: inline-block; }
+    .btn-submit:hover { background: var(--neon-dim); }
+    .btn-subscribe { background: transparent; color: #FF2D8A; padding: 10px 24px; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; border: 2px solid #FF2D8A; cursor: pointer; transition: background 0.18s, color 0.18s; display: inline-block; }
+    .btn-subscribe:hover { background: #FF2D8A; color: var(--ink); }
+    .social-icons { display: flex; gap: 14px; align-items: center; }
+    .social-icons a { color: var(--muted); font-size: 15px; transition: color 0.18s; }
+    .social-icons a:hover { color: var(--neon); }
+    nav { display: flex; padding: 10px 0 9px; align-items: center; }
+    nav a { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); padding: 3px 20px 3px 0; margin-right: 20px; border-right: 1px solid var(--divider); transition: color 0.18s; white-space: nowrap; }
+    nav a:last-child { border-right: none; margin-right: 0; }
+    nav a:first-child { padding-left: 0; }
+    nav a:hover { color: var(--neon); }
+    .nav-category-label { font-size: 10px; letter-spacing: 0.2em; color: var(--green); text-transform: uppercase; padding-right: 14px; margin-right: 14px; border-right: 1px solid var(--divider); font-style: italic; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); transition: all 0.25s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { display: none; flex-direction: column; background: var(--cream); border-top: 1px solid var(--divider); padding: 4px 0 12px; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); padding: 13px 24px; border-bottom: 1px solid var(--divider); transition: color 0.18s; }
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-nav a:hover { color: var(--neon); }
+
+    .article-header { max-width: 720px; margin: 64px auto 0; padding: 0 48px 40px; border-bottom: 1px solid var(--divider); }
+    .article-breadcrumb { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--neon); font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+    .article-breadcrumb a { color: var(--muted); transition: color 0.18s; }
+    .article-breadcrumb a:hover { color: var(--neon); }
+    .article-breadcrumb-sep { color: var(--divider); }
+    .article-title { font-size: 52px; font-weight: 700; line-height: 1.07; letter-spacing: -0.02em; color: var(--ink); }
+    .article-meta { display: flex; align-items: center; gap: 20px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--divider); flex-wrap: wrap; }
+    .article-author { font-size: 14px; font-weight: 700; color: var(--ink); }
+    .article-role { font-size: 13px; font-style: italic; color: var(--sand); }
+    .article-date { font-size: 13px; color: var(--sand); font-style: italic; margin-left: auto; }
+
+    .article-hero-image { max-width: 720px; margin: 0 auto; padding: 40px 48px 0; }
+    .article-hero-image img { width: 100%; display: block; }
+    .img-caption { font-size: 12px; font-style: italic; color: var(--sand); margin-top: 10px; }
+
+    .article-body { max-width: 720px; margin: 0 auto; padding: 44px 48px 0; }
+    .article-body .intro { font-size: 19px; line-height: 1.8; color: var(--ink); margin-bottom: 36px; }
+    .qa-block { margin-bottom: 36px; }
+    .qa-question { font-size: 18px; font-weight: 700; color: var(--ink); line-height: 1.4; margin-bottom: 12px; }
+    .qa-answer { font-size: 18px; line-height: 1.8; color: var(--muted); }
+    .qa-answer .speaker { font-weight: 700; color: var(--ink); font-style: normal; }
+    .qa-divider { width: 40px; height: 2px; background: var(--neon); margin: 36px 0; }
+    .article-outro { font-size: 16px; font-style: italic; color: var(--sand); margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--divider); line-height: 1.7; }
+
+    .author-bio { max-width: 720px; margin: 52px auto 0; padding: 28px 48px; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--divider); display: flex; gap: 20px; align-items: flex-start; }
+    .author-bio-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--neon); font-weight: 700; white-space: nowrap; padding-top: 3px; }
+    .author-bio-text { font-size: 15px; font-style: italic; color: var(--muted); line-height: 1.65; }
+
+    .comments-section { max-width: 720px; margin: 52px auto 0; padding: 0 48px 52px; }
+    .comments-header { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
+    .comments-header h2 { font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink); font-weight: 700; white-space: nowrap; }
+    .comments-line { flex: 1; height: 1px; background: var(--divider); }
+    .comment-form { margin-bottom: 48px; }
+    .comment-form-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    .comment-form input, .comment-form textarea { width: 100%; padding: 12px 16px; font-family: 'Hoefler Text', 'Georgia', serif; font-size: 15px; background: var(--parchment); border: 1px solid var(--divider); color: var(--ink); outline: none; transition: border-color 0.18s; }
+    .comment-form input:focus, .comment-form textarea:focus { border-color: var(--neon); }
+    .comment-form input::placeholder, .comment-form textarea::placeholder { color: var(--sand); }
+    .comment-form textarea { resize: vertical; min-height: 120px; margin-bottom: 12px; }
+    .comment-form button { background: var(--ink); color: var(--cream); padding: 12px 28px; font-family: 'Hoefler Text', 'Georgia', serif; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; border: none; cursor: pointer; transition: background 0.18s; }
+    .comment-form button:hover { background: var(--neon); }
+    .comment { padding: 24px 0; border-bottom: 1px solid var(--divider); }
+    .comment:last-child { border-bottom: none; }
+    .comment-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    .comment-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: var(--cream); flex-shrink: 0; }
+    .comment-name { font-size: 14px; font-weight: 700; color: var(--ink); }
+    .comment-date { font-size: 12px; font-style: italic; color: var(--sand); margin-left: auto; }
+    .comment-text { font-size: 16px; color: var(--muted); line-height: 1.7; padding-left: 48px; }
+
+    .read-more { max-width: 720px; margin: 0 auto; padding: 0 48px 80px; border-top: 1px solid var(--divider); padding-top: 48px; }
+    .read-more-header { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+    .read-more-header h2 { font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink); font-weight: 700; white-space: nowrap; }
+    .read-more-line { flex: 1; height: 1px; background: var(--divider); }
+    .read-more-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    .read-more-card { cursor: pointer; }
+    .read-more-img { width: 100%; aspect-ratio: 3/2; }
+    .img-a { background: linear-gradient(160deg, #6B2045, #E8D8C8); }
+    .img-b { background: linear-gradient(160deg, #3D2E50, #6B7A3A); }
+    .read-more-cat { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--neon); font-weight: 700; margin-top: 12px; display: block; }
+    .read-more-title { font-size: 17px; font-weight: 700; line-height: 1.3; color: var(--ink); margin-top: 5px; transition: color 0.18s; }
+    .read-more-card:hover .read-more-title { color: var(--green); }
+    .read-more-meta { font-size: 11px; color: var(--sand); margin-top: 7px; font-style: italic; }
+
+    footer { background: #2D0A18; color: var(--sand); padding: 52px 48px; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 48px; }
+    .footer-logo { font-size: 28px; font-weight: 700; color: var(--cream); letter-spacing: -0.02em; }
+    .footer-logo span { color: var(--neon); }
+    .footer-tagline { font-style: italic; font-size: 14px; color: var(--green-light); margin-top: 10px; }
+    .footer-col h4 { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--neon); margin-bottom: 16px; font-weight: 700; }
+    .footer-col a { display: block; font-size: 14px; color: #C8A0B0; margin-bottom: 10px; transition: color 0.18s; }
+    .footer-col a:hover { color: var(--cream); }
+    .footer-bottom { background: #2D0A18; border-top: 1px solid #3D0F28; padding: 16px 48px; text-align: center; }
+    .footer-bottom p { font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+
+    @media (max-width: 768px) {
+      header { padding: 0 18px; }
+      .header-top { padding: 13px 0 11px; }
+      .header-tagline { display: none; }
+      .logo { font-size: 28px; }
+      .social-icons { display: none; }
+      .btn-subscribe { display: none; }
+      .hamburger { display: flex; }
+      nav { display: none; }
+      .article-header { margin-top: 36px; padding: 0 18px 28px; }
+      .article-title { font-size: 32px; }
+      .article-meta { gap: 10px; }
+      .article-date { margin-left: 0; }
+      .article-hero-image { padding: 28px 18px 0; }
+      .article-body { padding: 32px 18px 0; }
+      .article-body .intro { font-size: 17px; }
+      .qa-question { font-size: 16px; }
+      .qa-answer { font-size: 16px; }
+      .author-bio { padding: 24px 18px; flex-direction: column; gap: 10px; }
+      .comments-section { padding: 0 18px 40px; }
+      .comment-form-fields { grid-template-columns: 1fr; }
+      .comment-text { padding-left: 0; margin-top: 8px; }
+      .read-more { padding: 36px 18px 60px; }
+      .read-more-grid { grid-template-columns: 1fr; gap: 24px; }
+      footer { grid-template-columns: 1fr; padding: 36px 18px; gap: 28px; }
+      .footer-bottom { padding: 14px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="announcement">
+    <div class="announcement-track">
+      <div class="announcement-item">We're back <span class="announcement-dot">&middot;</span> <span>Submissions are open</span></div>
+      <div class="announcement-item"><span>Summer 2026</span></div>
+      <div class="announcement-item">By women. For everyone.</div>
+      <div class="announcement-item">Essays &middot; Reviews &middot; The Discourse <span class="announcement-dot">&middot;</span> <span>New this month</span></div>
+      <div class="announcement-item">Fiction &amp; Poetry <span class="announcement-dot">&middot;</span> <span>Submit your work</span></div>
+      <div class="announcement-item">We're back <span class="announcement-dot">&middot;</span> <span>Submissions are open</span></div>
+      <div class="announcement-item"><span>Summer 2026</span></div>
+      <div class="announcement-item">By women. For everyone.</div>
+      <div class="announcement-item">Essays &middot; Reviews &middot; The Discourse <span class="announcement-dot">&middot;</span> <span>New this month</span></div>
+      <div class="announcement-item">Fiction &amp; Poetry <span class="announcement-dot">&middot;</span> <span>Submit your work</span></div>
+    </div>
+  </div>
+
+  <header>
+    <div class="header-top">
+      <a href="index.html" class="logo">Femi<span>NICHE</span></a>
+      <span class="header-tagline">By women. For everyone.</span>
+      <div class="header-actions">
+        <div class="social-icons">
+          <a href="https://x.com/femiNICHEmag" title="Twitter/X" target="_blank">&#120143;</a>
+          <a href="https://instagram.com/feminichemag" title="Instagram" target="_blank"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line></svg></a>
+          <a href="mailto:feminichemag@gmail.com" title="Email">&#9993;</a>
+        </div>
+        <a href="index.html#newsletter" class="btn-subscribe">Subscribe</a>
+        <a href="feminiche-submit.html" class="btn-submit">Submit</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav>
+      <span class="nav-category-label">Pop Culture</span>
+      <a href="essays.html">Essays</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="the-discourse.html">The Discourse</a>
+      <a href="obsessions.html">Obsessions</a>
+      <a href="interviews.html">Interviews</a>
+      <span class="nav-category-label" style="margin-left:8px;">Creative Writing</span>
+      <a href="fiction.html">Fiction</a>
+      <a href="poetry.html">Poetry</a>
+      <a href="contact.html" style="margin-left:auto; padding-right:0; border-right:none;">Contact</a>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="essays.html">Essays</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="the-discourse.html">The Discourse</a>
+      <a href="obsessions.html">Obsessions</a>
+      <a href="interviews.html">Interviews</a>
+      <a href="fiction.html">Fiction</a>
+      <a href="poetry.html">Poetry</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html#newsletter" style="color:#FF2D8A;font-weight:700;border-top:2px solid var(--ink);">Subscribe to Newsletter</a>
+    </div>
+  </header>
+
+  <script>
+    const btn = document.getElementById('hamburger');
+    const mnav = document.getElementById('mobileNav');
+    btn.addEventListener('click', () => { btn.classList.toggle('open'); mnav.classList.toggle('open'); });
+  </script>
+
+  <div class="article-header">
+    <div class="article-breadcrumb">
+      <a href="feminiche.html">Home</a>
+      <span class="article-breadcrumb-sep">/</span>
+      <span>Reviews</span>
+    </div>
+    <h1 class="article-title">What's New with Diva Bleach?</h1>
+    <div class="article-meta">
+      <span class="article-author">Gina-Marie Lobaito</span>
+      <span class="article-role">Pop Culture Correspondent</span>
+      <span class="article-date">April 2, 2024</span>
+    </div>
+  </div>
+
+  <div class="article-hero-image">
+    <img src="diva-bleach-hero.png" alt="Sydney Roten and Brie Ritter of Diva Bleach" style="width:100%;display:block;" />
+    <p class="img-caption">Sydney Roten (left) and Brie Ritter (right) of Diva Bleach. Photo source: BandCamp.</p>
+  </div>
+
+  <div class="article-body">
+    <p class="intro">Meet Diva Bleach, a new alternative band taking the scene by storm. The duo consists of Sydney Roten (bass, vocals) and Brie Ritter (guitar) who started their band in Phoenix, Arizona. The two have been friends, coworkers, and are now bandmates &mdash; Diva Bleach has reached their third year together as a group. With their unique glitter-rock style, Diva Bleach is on the rise and not backing down. I spent 30 minutes with Sydney Roten and Brie Ritter on Zoom to discuss everything Diva Bleach including their musical inspirations, their upcoming tour, and what's next for the band. This conversation has been edited for length and clarity.</p>
+
+    <div class="qa-divider"></div>
+
+    <div class="qa-block">
+      <p class="qa-question">Where did the name Diva Bleach come from?</p>
+      <p class="qa-answer"><span class="speaker">SYDNEY ROTEN:</span> This is a fun story! Brie and I used to work at School of Rock together; this was before COVID actually. I was working at the front desk and one of our co-workers, James, came in and he was like, "Yo! I just thought of this band name last night, I was up late and it sounds like a band you would be in." So I was like, "What is it?" and he was like, "Diva Bleach!" I held onto it for a couple years before we started the band.</p>
+    </div>
+
+    <div class="qa-block">
+      <p class="qa-question">Who inspired you to make music and when did you know that was your passion?</p>
+      <p class="qa-answer"><span class="speaker">BRIE RITTER:</span> For both of us it started pretty young. For me, I watched the Josie and the Pussycats movie from the 2000s until I had it memorized. I watched them, and was like "I want to do that!" even though it was a movie. That sparked it for me. But of course, finding Paramore and all these other cool bands really helped.<br><br><span class="speaker">S:</span> Similar for me, growing up watching Hannah Montana and things like that, I knew I wanted to do that. Like Brie said, too, Paramore and all the new artists coming out during that era. Like Demi Lovato, Miley Cyrus, and artists like that.</p>
+    </div>
+
+    <div class="qa-block">
+      <p class="qa-question">We see you talk a lot about being positive female figures in the genre. What is it like being women in such a male-dominated industry? Specifically the pop-rock genre.</p>
+      <p class="qa-answer"><span class="speaker">S:</span> It's crazy. Luckily we are surrounded, for the most part, by good men. So we feel accepted with most of the people in our scene. It's really cool to be welcomed. Occasionally at a show you'll get weird guys that'll come up to you afterwards and try to hit on you, and that sucks, but I think the positive outweighs the negative.<br><br><span class="speaker">B:</span> Yeah. Going to shows and playing, people face-to-face are very kind, but I think it's on the internet where people are like, "Oh they're girls, blah blah blah..."<br><br><span class="speaker">S:</span> There are a lot of weird internet comments for sure.</p>
+    </div>
+
+    <div class="qa-block">
+      <p class="qa-question">What advice would you give younger girls who wanted to be a part of the music industry?</p>
+      <p class="qa-answer"><span class="speaker">B:</span> Just absolutely reach out to a friend first. At least for me, you can create music on your own, but it's so much more fun when you have someone to bounce ideas off of. It also helps you feel less alone. Even when we were playing our first shows, it was this little girl band, but Syd was there with me the whole time. I am never just standing alone.<br><br><span class="speaker">S:</span> I agree. For the longest time, I was just scared to put myself out there because I was afraid of the judgment. But you just have to try it.</p>
+    </div>
+
+    <div class="qa-block">
+      <p class="qa-question">How has being in a band and touring together affected your friendship?</p>
+      <p class="qa-answer"><span class="speaker">S:</span> It's cool! You hear stories of people going on tour and then the band breaking up but we all like each other. We are touring in a little truck right now, so we are packed in there.<br><br><span class="speaker">B:</span> Like sardines.<br><br><span class="speaker">S:</span> I can't complain. We all have such a close bond, and it's cool because we help do each other's makeup, we share clothes, and it just feels like a sleepover every night. We play Nintendo and stuff.<br><br><span class="speaker">B:</span> I feel like that's one of the most important things while starting up a band. Just making sure that it's people that you vibe with and you can be around for extended periods of time.</p>
+    </div>
+
+    <div class="qa-block">
+      <p class="qa-question">What's a secret of touring that your fans would be surprised to know?</p>
+      <p class="qa-answer"><span class="speaker">B:</span> You sleep on floors! [<em>Laughs.</em>] That's probably a part that doesn't get talked about a lot.<br><br><span class="speaker">S:</span> You meet a lot of people's pets which I think is one of the most fun parts. Like there's a dog in Albuquerque we always visit. Same with Utah.<br><br><span class="speaker">B:</span> We know whose pets we can visit on the route!<br><br><span class="speaker">S:</span> That's really fun. When you're at our level, we try not to stay in hotels, so every night is different. You get to meet a lot of different people and create new friendships. You don't expect to make a lot of friendships out there.<br><br><span class="speaker">B:</span> Yeah! Especially the times where we'll be like, "Hey, can anyone in Albuquerque host us?" and we end up crashing with a stranger and they're just the sweetest person we've ever met.</p>
+    </div>
+
+    <div class="qa-block">
+      <p class="qa-question">What can we expect from your setlist at Sad Summer Fest?</p>
+      <p class="qa-answer"><span class="speaker">B:</span> We can say we are working on some new music now that we will hopefully have out by then, so a little bit of new stuff! We recently started doing our live shows with tracks &mdash; there was a point where we hadn't done that &mdash; so I feel like our live shows have elevated a little more from what they used to be. The sound is a bit fuller and the energy is coming out more.<br><br><span class="speaker">S:</span> There's a couple tracks where I was singing and playing bass for every song but now there's a few songs where I'm just singing and front-manning, so yeah, it'll be cool!</p>
+    </div>
+
+    <div class="qa-block">
+      <p class="qa-question">What type of music can we expect from Diva Bleach in the future?</p>
+      <p class="qa-answer"><span class="speaker">S:</span> I think we like to experiment a bit with the sound we like to make and I think the future is really open-ended.<br><br><span class="speaker">B:</span> It's always been a goal for us to make songs that sound different from each other. That's one of my favorite things with bands, when they sound completely different, but it still sounds like the band. I hope we can achieve that. Dabbling in a few different things, but you still know that's Diva Bleach.<br><br><span class="speaker">S:</span> Exactly. There's a couple songs we are working on for the future. We have a slower, more ballad-y one, and then we have a more angsty one, and things like that.</p>
+    </div>
+
+    <div class="qa-block">
+      <p class="qa-question">Is there a specific creative process that goes into your merchandise design?</p>
+      <p class="qa-answer"><span class="speaker">S:</span> It really depends. We've hired artists in the past, but a lot of the time we create our own.<br><br><span class="speaker">B:</span> It's either one of us who draw it up ourselves or we reach out to an artist that we are a fan of.<br><br><span class="speaker">S:</span> We have these beanies that are gonna be on tour that Brie designed, and we have a tee shirt in the death metal font that I drew up. We kinda helped together, but I think we are starting to lean more towards that.<br><br></p>
+    </div>
+
+    <div class="qa-block">
+      <p class="qa-question">If you could create a megaband with other artists in the industry, dead or alive, who would you play with?</p>
+      <p class="qa-answer"><span class="speaker">B:</span> That's so hard! My first thought instinctively is to put all of the members of boygenius in there. It wouldn't make sense with the boygenius mix, but throw David Bowie in there too.<br><br><span class="speaker">S:</span> Oh man. Gerard Way. I love My Chemical Romance. All the music he's created is so across the board so I think it would be chaotic. Definitely Phoebe Bridgers, for sure. There are so many musicians!<br><br><span class="speaker">B:</span> In my head now, I'm creating the most chaotic group I can. I got boygenius and David Bowie and now I'm gonna put John Bonham on drums. It's perfect. It would be the most weird, indie-emo band you've ever heard.<br><br><span class="speaker">S:</span> It would have to work.</p>
+    </div>
+
+    <div class="qa-block">
+      <p class="qa-question">Finally, what song would currently be on your MySpace profile?</p>
+      <p class="qa-answer"><span class="speaker">S:</span> I wish I got to use MySpace when that was a thing, but we just missed it!<br><br><span class="speaker">B:</span> We did, but I would be someone who changes it all the time. I'm gonna say "GIRL$" by Stand Atlantic, PVRIS, and Bruses. It's been stuck in my head for the 2 days it's been out.<br><br><span class="speaker">S:</span> I think right now I would choose "Coma" by Taylor Acorn and Cassadee Pope but it would change all the time.</p>
+    </div>
+
+    <p class="article-outro">Diva Bleach's new single, "Torn in Two," is streaming on all platforms. You can keep up with the girls on TikTok @divableach and everywhere else @divableachband. Check out their upcoming shows with Young Rising Sons, as well as their shows with Sad Summer Fest this July &amp; August. Us girls at FemiNICHE are so excited to see what Diva Bleach has in store. Thank you Sydney and Brie!</p>
+  </div>
+
+  <div class="author-bio">
+    <span class="author-bio-label">About the Author</span>
+    <p class="author-bio-text">Gina-Marie Lobaito is a Pop Culture Correspondent at FemiNICHE.</p>
+  </div>
+
+  
+
+  <div class="read-more">
+    <div class="read-more-header">
+      <h2>Read More</h2>
+      <div class="read-more-line"></div>
+    </div>
+    <div class="read-more-grid">
+      <a href="holly-madison.html" class="read-more-card">
+        <img src="holly-madison-hero.png" alt="Holly Madison" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
+        <span class="read-more-cat">Interviews</span>
+        <h3 class="read-more-title">Holly Madison on Autism and Female Stardom</h3>
+        <p class="read-more-meta">July 7, 2024</p>
+      </a>
+      <a href="jacob-elordi.html" class="read-more-card">
+        <img src="jacob-elordi-thumb.png" alt="Jacob Elordi" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
+        <span class="read-more-cat">Essays</span>
+        <h3 class="read-more-title">I Watched Every Jacob Elordi Movie So You Didn't Have To</h3>
+        <p class="read-more-meta">January 19, 2024</p>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <div>
+      <div class="footer-logo">Femi<span>NICHE</span></div>
+      <p class="footer-tagline">By women. For everyone.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Sections</h4>
+      <a href="essays.html">Essays</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="the-discourse.html">The Discourse</a>
+      <a href="obsessions.html">Obsessions</a>
+      <a href="interviews.html">Interviews</a>
+      <a href="fiction.html">Fiction</a>
+      <a href="poetry.html">Poetry</a>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <a href="about.html">Our Story</a>
+      <a href="feminiche-submit.html">Submit Your Work</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html#newsletter" style="color:#FF2D8A;font-weight:700;border-top:2px solid var(--ink);">Subscribe to Newsletter</a>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    <p>&copy; 2026 FemiNICHE &nbsp;&middot;&nbsp; All rights reserved</p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit — FemiNICHE</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F5EBE0;
+      --parchment: #E8D8C8;
+      --green: #6B7A2A;
+      --green-dark: #6B2045;
+      --green-light: #D4A0A8;
+      --olive: #5C6B28;
+      --moss: #3D5C35;
+      --sand: #8A6858;
+      --ink: #4A1528;
+      --dark: #3D0F28;
+      --muted: #8A6858;
+      --divider: #D4A0A8;
+      --neon: #8B3558;
+      --neon-dim: #6B2045;
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 120px; }
+
+    body {
+      background-color: var(--cream);
+      color: var(--ink);
+      font-family: 'Hoefler Text', 'Georgia', serif;
+      font-size: 17px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── ANNOUNCEMENT ── */
+    .announcement {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 9px 0;
+      font-family: 'Hoefler Text', 'Georgia', serif;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .announcement-track {
+      display: inline-flex;
+      animation: ticker 32s linear infinite;
+    }
+
+    .announcement-track:hover { animation-play-state: paused; }
+
+    .announcement-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      padding: 0 36px;
+    }
+
+    .announcement-item span {
+      color: #FF2D8A;
+      font-style: italic;
+      letter-spacing: 0.04em;
+      text-transform: none;
+      font-size: 13px;
+    }
+
+    .announcement-dot { color: var(--green-light); opacity: 0.6; }
+
+    @keyframes ticker {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--cream);
+      border-bottom: 2px solid var(--ink);
+      padding: 0 48px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0 12px;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .logo {
+      font-family: 'Hoefler Text', 'Georgia', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .logo span { color: var(--neon); }
+
+    .header-tagline {
+      font-family: 'Hoefler Text', 'Georgia', serif;
+      font-style: italic;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .btn-submit {
+      background: var(--neon);
+      color: #fff;
+      padding: 10px 24px;
+      font-family: 'Hoefler Text', 'Georgia', serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.18s;
+      display: inline-block;
+    }
+
+    .btn-submit:hover { background: var(--neon-dim); }
+    .btn-subscribe { background: transparent; color: #FF2D8A; padding: 10px 24px; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; border: 2px solid #FF2D8A; cursor: pointer; transition: background 0.18s, color 0.18s; display: inline-block; }
+    .btn-subscribe:hover { background: #FF2D8A; color: var(--ink); }
+
+    .social-icons { display: flex; gap: 14px; align-items: center; }
+    .social-icons a { color: var(--muted); font-size: 15px; transition: color 0.18s; }
+    .social-icons a:hover { color: var(--neon); }
+
+    nav {
+      display: flex;
+      padding: 10px 0 9px;
+      align-items: center;
+    }
+
+    nav a {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 3px 20px 3px 0;
+      margin-right: 20px;
+      border-right: 1px solid var(--divider);
+      transition: color 0.18s;
+      white-space: nowrap;
+    }
+
+    nav a:last-child { border-right: none; margin-right: 0; }
+    nav a:first-child { padding-left: 0; }
+    nav a:hover { color: var(--neon); }
+
+    .nav-category-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--green);
+      text-transform: uppercase;
+      padding-right: 14px;
+      margin-right: 14px;
+      border-right: 1px solid var(--divider);
+      font-style: italic;
+    }
+
+    /* ── HAMBURGER ── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--ink);
+      transition: all 0.25s;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: var(--cream);
+      border-top: 1px solid var(--divider);
+      padding: 4px 0 12px;
+    }
+
+    .mobile-nav.open { display: flex; }
+
+    .mobile-nav a {
+      font-size: 14px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 13px 24px;
+      border-bottom: 1px solid var(--divider);
+      transition: color 0.18s;
+    }
+
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-nav a:hover { color: var(--neon); }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      max-width: 780px;
+      margin: 64px auto 0;
+      padding: 0 48px 40px;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .page-header-label {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--neon);
+      font-weight: 700;
+    }
+
+    .page-header h1 {
+      font-size: 56px;
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-top: 10px;
+    }
+
+    .page-header-intro {
+      font-size: 18px;
+      font-style: italic;
+      color: var(--muted);
+      margin-top: 16px;
+      line-height: 1.65;
+    }
+
+    /* ── CONTENT ── */
+    .submit-content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 48px 80px;
+    }
+
+    .submit-section {
+      margin-bottom: 48px;
+    }
+
+    .submit-section h2 {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink);
+      font-weight: 700;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--ink);
+      margin-bottom: 24px;
+    }
+
+    .submit-section p {
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+
+    .submit-section p:last-child { margin-bottom: 0; }
+
+    /* ── CATEGORY GRID ── */
+    .category-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--divider);
+      border: 1px solid var(--divider);
+      margin-top: 4px;
+    }
+
+    .category-item {
+      background: var(--cream);
+      padding: 24px 28px;
+    }
+
+    .category-name {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--neon);
+    }
+
+    .category-desc {
+      font-size: 16px;
+      font-style: italic;
+      color: var(--muted);
+      margin-top: 6px;
+      line-height: 1.6;
+    }
+
+    .category-length {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-top: 10px;
+    }
+
+    /* ── GUIDELINES LIST ── */
+    .guidelines-list {
+      list-style: none;
+      margin-top: 4px;
+    }
+
+    .guidelines-list li {
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.7;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--divider);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .guidelines-list li:last-child { border-bottom: none; }
+
+    .guidelines-list li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      background: var(--neon);
+      margin-top: 10px;
+    }
+
+    .guidelines-list a {
+      color: var(--neon);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ── CTA ── */
+    .submit-cta {
+      background: var(--ink);
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      max-width: 780px;
+      margin: 0 auto 80px;
+    }
+
+    .submit-cta p {
+      font-size: 20px;
+      font-style: italic;
+      color: var(--cream);
+      line-height: 1.5;
+    }
+
+    .submit-cta p span { color: var(--neon); }
+
+    .btn-email {
+      background: var(--neon);
+      color: #fff;
+      padding: 14px 32px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      transition: background 0.18s;
+      display: inline-block;
+    }
+
+    .btn-email:hover { background: var(--neon-dim); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #2D0A18;
+      color: var(--sand);
+      padding: 52px 48px;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 48px;
+    }
+
+    .footer-logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--cream);
+      letter-spacing: -0.02em;
+    }
+
+    .footer-logo span { color: var(--neon); }
+    .footer-tagline { font-style: italic; font-size: 14px; color: var(--green-light); margin-top: 10px; }
+
+    .footer-col h4 {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--neon);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 14px;
+      color: var(--sand);
+      margin-bottom: 10px;
+      transition: color 0.18s;
+    }
+
+    .footer-col a:hover { color: var(--cream); }
+
+    .footer-bottom {
+      background: #2D0A18;
+      border-top: 1px solid #3D0F28;
+      padding: 16px 48px;
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      header { padding: 0 18px; }
+      .header-top { padding: 13px 0 11px; }
+      .header-tagline { display: none; }
+      .logo { font-size: 28px; }
+      .social-icons { display: none; }
+      .btn-subscribe { display: none; }
+      .hamburger { display: flex; }
+      nav { display: none; }
+      .announcement { font-size: 11px; padding: 7px 0; }
+
+      .page-header { margin-top: 36px; padding: 0 18px 32px; }
+      .page-header h1 { font-size: 36px; }
+      .page-header-intro { font-size: 16px; }
+
+      .submit-content { padding: 36px 18px 60px; }
+
+      .category-grid { grid-template-columns: 1fr; }
+
+      .submit-cta {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 28px 18px;
+        margin: 0 18px 60px;
+      }
+
+      .btn-email { width: 100%; text-align: center; }
+
+      footer { grid-template-columns: 1fr; padding: 36px 18px; gap: 28px; }
+      .footer-bottom { padding: 14px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="announcement">
+    <div class="announcement-track">
+      <div class="announcement-item">We're back <span class="announcement-dot">&middot;</span> <span>Submissions are open</span></div>
+      <div class="announcement-item"><span>Summer 2026</span></div>
+      <div class="announcement-item">By women. For everyone.</div>
+      <div class="announcement-item">Essays &middot; Reviews &middot; The Discourse <span class="announcement-dot">&middot;</span> <span>New this month</span></div>
+      <div class="announcement-item">Fiction &amp; Poetry <span class="announcement-dot">&middot;</span> <span>Submit your work</span></div>
+      <div class="announcement-item">We're back <span class="announcement-dot">&middot;</span> <span>Submissions are open</span></div>
+      <div class="announcement-item"><span>Summer 2026</span></div>
+      <div class="announcement-item">By women. For everyone.</div>
+      <div class="announcement-item">Essays &middot; Reviews &middot; The Discourse <span class="announcement-dot">&middot;</span> <span>New this month</span></div>
+      <div class="announcement-item">Fiction &amp; Poetry <span class="announcement-dot">&middot;</span> <span>Submit your work</span></div>
+    </div>
+  </div>
+
+  <header>
+    <div class="header-top">
+      <a href="index.html" class="logo">Femi<span>NICHE</span></a>
+      <span class="header-tagline">By women. For everyone.</span>
+      <div class="header-actions">
+        <div class="social-icons">
+          <a href="https://x.com/femiNICHEmag" title="Twitter/X" target="_blank">&#120143;</a>
+          <a href="https://instagram.com/feminichemag" title="Instagram" target="_blank"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line></svg></a>
+          <a href="mailto:feminichemag@gmail.com" title="Email">&#9993;</a>
+        </div>
+        <a href="index.html#newsletter" class="btn-subscribe">Subscribe</a>
+        <a href="feminiche-submit.html" class="btn-submit">Submit</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav>
+      <span class="nav-category-label">Pop Culture</span>
+      <a href="essays.html">Essays</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="the-discourse.html">The Discourse</a>
+      <a href="obsessions.html">Obsessions</a>
+      <a href="interviews.html">Interviews</a>
+      <span class="nav-category-label" style="margin-left:8px;">Creative Writing</span>
+      <a href="fiction.html">Fiction</a>
+      <a href="poetry.html">Poetry</a>
+      <a href="contact.html" style="margin-left:auto; padding-right:0; border-right:none;">Contact</a>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="essays.html">Essays</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="the-discourse.html">The Discourse</a>
+      <a href="obsessions.html">Obsessions</a>
+      <a href="interviews.html">Interviews</a>
+      <a href="fiction.html">Fiction</a>
+      <a href="poetry.html">Poetry</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html#newsletter" style="color:#FF2D8A;font-weight:700;border-top:2px solid var(--ink);">Subscribe to Newsletter</a>
+    </div>
+  </header>
+
+  <script>
+    const btn = document.getElementById('hamburger');
+    const mnav = document.getElementById('mobileNav');
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('open');
+      mnav.classList.toggle('open');
+    });
+    mnav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        btn.classList.remove('open');
+        mnav.classList.remove('open');
+      });
+    });
+  </script>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <span class="page-header-label">Submissions</span>
+    <h1>Submit to FemiNICHE</h1>
+    <p class="page-header-intro">FemiNICHE is an online magazine covering pop culture, criticism, and creative writing. We publish essays, reviews, cultural commentary, fiction, and poetry by women and gender-diverse people. We are currently open for submissions for Summer 2026.</p>
+  </div>
+
+  <div class="submit-content">
+
+    <!-- Who Can Submit -->
+    <div class="submit-section">
+      <h2>Who Can Submit</h2>
+      <p>FemiNICHE welcomes submissions from women and gender-diverse people at any stage of their writing journey. First-time contributors are encouraged to pitch.</p>
+    </div>
+
+    <!-- What We're Looking For -->
+    <div class="submit-section">
+      <h2>What We're Looking For</h2>
+      <div class="category-grid">
+        <div class="category-item">
+          <div class="category-name">Essays</div>
+          <p class="category-desc">Longform personal or cultural essays with a strong voice and a clear argument.</p>
+          <p class="category-length">800 &ndash; 3,000 words</p>
+        </div>
+        <div class="category-item">
+          <div class="category-name">Reviews</div>
+          <p class="category-desc">Film, TV, music, books, or anything worth having an opinion about.</p>
+          <p class="category-length">400 &ndash; 900 words</p>
+        </div>
+        <div class="category-item">
+          <div class="category-name">The Discourse</div>
+          <p class="category-desc">Hot takes, cultural commentary, and responses to things currently happening. Punchy and opinionated.</p>
+          <p class="category-length">300 &ndash; 1,000 words</p>
+        </div>
+        <div class="category-item">
+          <div class="category-name">Obsessions</div>
+          <p class="category-desc">Short, fun recommendations: something you've been watching, reading, or listening to that you can't stop thinking about.</p>
+          <p class="category-length">150 &ndash; 300 words</p>
+        </div>
+        <div class="category-item">
+          <div class="category-name">Fiction</div>
+          <p class="category-desc">Short literary fiction with a strong sense of voice and world. Any subgenre welcome.</p>
+          <p class="category-length">Up to 6,000 words</p>
+        </div>
+        <div class="category-item">
+          <div class="category-name">Poetry</div>
+          <p class="category-desc">Any form. Submit up to 3 poems per submission in one document.</p>
+          <p class="category-length">Up to 3 poems</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Guidelines -->
+    <div class="submit-section">
+      <h2>Guidelines</h2>
+      <ul class="guidelines-list">
+        <li>We accept previously unpublished work only.</li>
+        <li>We are fine with simultaneous submissions but please notify us immediately if your work is accepted elsewhere.</li>
+        <li>Submit as a Word document or Google Doc link to <a href="mailto:feminichemag@gmail.com">feminichemag@gmail.com</a> with the subject line: SUBMISSION &mdash; [Category] &mdash; [Title].</li>
+        <li>Include a 2&ndash;3 sentence bio in the body of your email.</li>
+        <li>We aim to respond within 4&ndash;6 weeks. If you haven't heard from us after 6 weeks, feel free to follow up.</li>
+        <li>Contributors are not paid at this time. We hope to change this as FemiNICHE grows.</li>
+      </ul>
+    </div>
+
+    <!-- Editing -->
+    <div class="submit-section">
+      <h2>A Note on Editing</h2>
+      <p>We reserve the right to lightly edit accepted work for clarity and style. If you are unhappy with any changes made before publication, reach out and we will work it out together.</p>
+    </div>
+
+    <!-- Copyright & AI -->
+    <div class="submit-section">
+      <h2>Copyright &amp; AI</h2>
+      <p>We take plagiarism seriously and will not publish work that is not your own. This includes work generated by or substantially assisted by AI.</p>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="submit-cta">
+    <p>Ready? Send your work to <span>feminichemag@gmail.com</span></p>
+    <a href="mailto:feminichemag@gmail.com" class="btn-email">Submit Now</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <div class="footer-logo">Femi<span>NICHE</span></div>
+      <p class="footer-tagline">By women. For everyone.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Sections</h4>
+      <a href="essays.html">Essays</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="the-discourse.html">The Discourse</a>
+      <a href="obsessions.html">Obsessions</a>
+      <a href="interviews.html">Interviews</a>
+      <a href="fiction.html">Fiction</a>
+      <a href="poetry.html">Poetry</a>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <a href="about.html">Our Story</a>
+      <a href="feminiche-submit.html">Submit Your Work</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html#newsletter" style="color:#FF2D8A;font-weight:700;border-top:2px solid var(--ink);">Subscribe to Newsletter</a>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    <p>&copy; 2026 FemiNICHE &nbsp;&middot;&nbsp; All rights reserved</p>
+  </div>
+
+</body>
+</html>

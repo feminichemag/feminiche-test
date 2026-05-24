@@ -1,0 +1,308 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/uploads"
+public_folder: "/uploads"
+
+site_url: https://feminichemag.com
+
+# Shared field definitions (reused across collections)
+# This isn't a Decap feature, but the field structure repeats below.
+
+collections:
+  # ESSAYS
+  - name: "essays"
+    label: "Essays"
+    label_singular: "Essay"
+    folder: "src/articles/essays"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Layout (don't change)", name: "layout", widget: "hidden", default: "article-essay.njk" }
+      - { label: "Title", name: "title", widget: "string", hint: "Headline of the article" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Author Role (optional)", name: "role", widget: "string", required: false, hint: "e.g. Pop Culture Correspondent" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Hero Image (optional)", name: "heroImage", widget: "image", required: false, hint: "Big image at the top of the article" }
+      - { label: "Hero Image Alt Text", name: "heroAlt", widget: "string", required: false }
+      - { label: "Hero Image Caption (optional)", name: "heroCaption", widget: "string", required: false }
+      - { label: "Excerpt (for homepage card)", name: "excerpt", widget: "string", required: false, hint: "A short summary shown on the homepage" }
+      - { label: "Intro Paragraph (optional, appears larger)", name: "intro", widget: "text", required: false }
+      - label: "Body (add as many text blocks and images as you want)"
+        name: "bodyBlocks"
+        widget: "list"
+        types:
+          - label: "Text paragraph(s)"
+            name: "text"
+            widget: "object"
+            fields:
+              - { label: "Type", name: "type", widget: "hidden", default: "text" }
+              - { label: "Text", name: "text", widget: "text", hint: "Press Enter twice to create a new paragraph. Use <em>italic</em> and <strong>bold</strong> for formatting." }
+          - label: "Image with caption"
+            name: "image"
+            widget: "object"
+            fields:
+              - { label: "Type", name: "type", widget: "hidden", default: "image" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Alt text", name: "alt", widget: "string", required: false }
+              - { label: "Caption (optional)", name: "caption", widget: "string", required: false }
+          - label: "Pull Quote"
+            name: "quote"
+            widget: "object"
+            fields:
+              - { label: "Type", name: "type", widget: "hidden", default: "quote" }
+              - { label: "Quote text", name: "text", widget: "string" }
+      - { label: "Closing note / Outro (optional, italic gray text)", name: "outro", widget: "text", required: false }
+      - { label: "Author Bio (optional)", name: "authorBio", widget: "text", required: false }
+
+  # REVIEWS
+  - name: "reviews"
+    label: "Reviews"
+    label_singular: "Review"
+    folder: "src/articles/reviews"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Review style"
+        name: "layout"
+        widget: "select"
+        default: "article-review-standard.njk"
+        options:
+          - { label: "Standard review (one subject like Diva Bleach)", value: "article-review-standard.njk" }
+          - { label: "Ranked list (like Jacob Elordi 'every movie' style)", value: "article-review-list.njk" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Author Role", name: "role", widget: "string", required: false }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Hero Image", name: "heroImage", widget: "image", required: false }
+      - { label: "Hero Alt", name: "heroAlt", widget: "string", required: false }
+      - { label: "Hero Caption", name: "heroCaption", widget: "string", required: false }
+      - { label: "Excerpt", name: "excerpt", widget: "string", required: false }
+      - { label: "Intro Paragraph", name: "intro", widget: "text", required: false }
+      - label: "List items (ONLY for ranked list style — leave empty for standard)"
+        name: "listItems"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Rank", name: "rank", widget: "string", required: false, hint: "e.g. 1, 2, 3" }
+          - { label: "Title of this item", name: "title", widget: "string" }
+          - { label: "Subtitle (e.g. year, director)", name: "subtitle", widget: "string", required: false }
+          - { label: "Image", name: "image", widget: "image", required: false }
+          - { label: "Image caption", name: "caption", widget: "string", required: false }
+          - { label: "Text", name: "text", widget: "text" }
+      - label: "Body (for standard style, or extra commentary)"
+        name: "bodyBlocks"
+        widget: "list"
+        required: false
+        types:
+          - label: "Text paragraph(s)"
+            name: "text"
+            widget: "object"
+            fields:
+              - { label: "Type", name: "type", widget: "hidden", default: "text" }
+              - { label: "Text", name: "text", widget: "text" }
+          - label: "Image with caption"
+            name: "image"
+            widget: "object"
+            fields:
+              - { label: "Type", name: "type", widget: "hidden", default: "image" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Alt", name: "alt", widget: "string", required: false }
+              - { label: "Caption", name: "caption", widget: "string", required: false }
+          - label: "Pull Quote"
+            name: "quote"
+            widget: "object"
+            fields:
+              - { label: "Type", name: "type", widget: "hidden", default: "quote" }
+              - { label: "Quote", name: "text", widget: "string" }
+      - { label: "Outro", name: "outro", widget: "text", required: false }
+      - { label: "Author Bio", name: "authorBio", widget: "text", required: false }
+
+  # THE DISCOURSE
+  - name: "the-discourse"
+    label: "The Discourse"
+    label_singular: "Discourse piece"
+    folder: "src/articles/the-discourse"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Layout (don't change)", name: "layout", widget: "hidden", default: "article-discourse.njk" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Author Role", name: "role", widget: "string", required: false }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Hero Image", name: "heroImage", widget: "image", required: false }
+      - { label: "Hero Alt", name: "heroAlt", widget: "string", required: false }
+      - { label: "Hero Caption", name: "heroCaption", widget: "string", required: false }
+      - { label: "Excerpt", name: "excerpt", widget: "string", required: false }
+      - { label: "Intro Paragraph", name: "intro", widget: "text", required: false }
+      - label: "Body"
+        name: "bodyBlocks"
+        widget: "list"
+        types:
+          - label: "Text paragraph(s)"
+            name: "text"
+            widget: "object"
+            fields:
+              - { label: "Type", name: "type", widget: "hidden", default: "text" }
+              - { label: "Text", name: "text", widget: "text" }
+          - label: "Image with caption"
+            name: "image"
+            widget: "object"
+            fields:
+              - { label: "Type", name: "type", widget: "hidden", default: "image" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Alt", name: "alt", widget: "string", required: false }
+              - { label: "Caption", name: "caption", widget: "string", required: false }
+          - label: "Pull Quote"
+            name: "quote"
+            widget: "object"
+            fields:
+              - { label: "Type", name: "type", widget: "hidden", default: "quote" }
+              - { label: "Quote", name: "text", widget: "string" }
+      - { label: "Outro", name: "outro", widget: "text", required: false }
+      - { label: "Author Bio", name: "authorBio", widget: "text", required: false }
+
+  # OBSESSIONS
+  - name: "obsessions"
+    label: "Obsessions"
+    label_singular: "Obsession"
+    folder: "src/articles/obsessions"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "article-obsession.njk" }
+      - { label: "Title (what you're obsessed with)", name: "title", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Hero Image", name: "heroImage", widget: "image", required: false }
+      - { label: "Hero Alt", name: "heroAlt", widget: "string", required: false }
+      - { label: "Hero Caption", name: "heroCaption", widget: "string", required: false }
+      - { label: "Excerpt", name: "excerpt", widget: "string", required: false }
+      - { label: "Intro", name: "intro", widget: "text", required: false }
+      - label: "Body"
+        name: "bodyBlocks"
+        widget: "list"
+        types:
+          - label: "Text"
+            name: "text"
+            widget: "object"
+            fields:
+              - { label: "Type", name: "type", widget: "hidden", default: "text" }
+              - { label: "Text", name: "text", widget: "text" }
+          - label: "Image with caption"
+            name: "image"
+            widget: "object"
+            fields:
+              - { label: "Type", name: "type", widget: "hidden", default: "image" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Alt", name: "alt", widget: "string", required: false }
+              - { label: "Caption", name: "caption", widget: "string", required: false }
+
+  # INTERVIEWS
+  - name: "interviews"
+    label: "Interviews"
+    label_singular: "Interview"
+    folder: "src/articles/interviews"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "article-interview.njk" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Interviewer", name: "author", widget: "string" }
+      - { label: "Author Role", name: "role", widget: "string", required: false }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Hero Image", name: "heroImage", widget: "image", required: false }
+      - { label: "Hero Alt", name: "heroAlt", widget: "string", required: false }
+      - { label: "Hero Caption", name: "heroCaption", widget: "string", required: false }
+      - { label: "Excerpt", name: "excerpt", widget: "string", required: false }
+      - { label: "Intro Paragraph", name: "intro", widget: "text", required: false }
+      - label: "Q&A Blocks"
+        name: "qaBlocks"
+        widget: "list"
+        fields:
+          - { label: "Question", name: "question", widget: "text" }
+          - { label: "Answer (use <span class='speaker'>NAME:</span> for speaker labels)", name: "answer", widget: "text" }
+      - label: "Extra Body Blocks (optional images, etc. — usually leave empty)"
+        name: "bodyBlocks"
+        widget: "list"
+        required: false
+        types:
+          - label: "Text"
+            name: "text"
+            widget: "object"
+            fields:
+              - { label: "Type", name: "type", widget: "hidden", default: "text" }
+              - { label: "Text", name: "text", widget: "text" }
+          - label: "Image with caption"
+            name: "image"
+            widget: "object"
+            fields:
+              - { label: "Type", name: "type", widget: "hidden", default: "image" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Alt", name: "alt", widget: "string", required: false }
+              - { label: "Caption", name: "caption", widget: "string", required: false }
+      - { label: "Outro", name: "outro", widget: "text", required: false }
+      - { label: "Author Bio", name: "authorBio", widget: "text", required: false }
+
+  # FICTION
+  - name: "fiction"
+    label: "Fiction"
+    label_singular: "Fiction piece"
+    folder: "src/articles/fiction"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "article-fiction.njk" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Author Role", name: "role", widget: "string", required: false }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Kicker (optional small label above title)", name: "kicker", widget: "string", required: false }
+      - { label: "Dek (optional subtitle below title)", name: "dek", widget: "text", required: false }
+      - { label: "Hero Image", name: "heroImage", widget: "image", required: false }
+      - { label: "Hero Alt", name: "heroAlt", widget: "string", required: false }
+      - { label: "Hero Caption", name: "heroCaption", widget: "string", required: false }
+      - { label: "Excerpt", name: "excerpt", widget: "string", required: false }
+      - label: "Story Body"
+        name: "bodyBlocks"
+        widget: "list"
+        types:
+          - label: "Text"
+            name: "text"
+            widget: "object"
+            fields:
+              - { label: "Type", name: "type", widget: "hidden", default: "text" }
+              - { label: "Text", name: "text", widget: "text" }
+          - label: "Image with caption"
+            name: "image"
+            widget: "object"
+            fields:
+              - { label: "Type", name: "type", widget: "hidden", default: "image" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Alt", name: "alt", widget: "string", required: false }
+              - { label: "Caption", name: "caption", widget: "string", required: false }
+      - { label: "Outro", name: "outro", widget: "text", required: false }
+      - { label: "Author Bio", name: "authorBio", widget: "text", required: false }
+
+  # POETRY
+  - name: "poetry"
+    label: "Poetry"
+    label_singular: "Poem(s)"
+    folder: "src/articles/poetry"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "article-poetry.njk" }
+      - { label: "Title (or collection name)", name: "title", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Excerpt", name: "excerpt", widget: "string", required: false }
+      - label: "Poems"
+        name: "poems"
+        widget: "list"
+        fields:
+          - { label: "Poem title (optional)", name: "title", widget: "string", required: false }
+          - { label: "Poem text (line breaks preserved exactly)", name: "text", widget: "text" }
+      - { label: "Author Bio", name: "authorBio", widget: "text", required: false }

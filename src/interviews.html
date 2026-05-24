@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interviews — FemiNICHE</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #F5EBE0; --parchment: #E8D8C8; --green: #6B7A2A; --green-dark: #6B2045;
+      --green-light: #D4A0A8; --sand: #8A6858; --ink: #4A1528; --dark: #3D0F28;
+      --muted: #8A6858; --divider: #D4A0A8; --neon: #8B3558; --neon-dim: #6B2045;
+    }
+    html { scroll-behavior: smooth; scroll-padding-top: 120px; }
+    body { background-color: var(--cream); color: var(--ink); font-family: 'Hoefler Text', 'Georgia', serif; font-size: 17px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .announcement { background: var(--ink); color: var(--cream); padding: 9px 0; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; overflow: hidden; white-space: nowrap; }
+    .announcement-track { display: inline-flex; animation: ticker 32s linear infinite; }
+    .announcement-track:hover { animation-play-state: paused; }
+    .announcement-item { display: inline-flex; align-items: center; gap: 16px; padding: 0 36px; }
+    .announcement-item span { color: #FF2D8A; font-style: italic; letter-spacing: 0.04em; text-transform: none; font-size: 13px; }
+    .announcement-dot { color: var(--green-light); opacity: 0.6; }
+    @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    header { background: var(--cream); border-bottom: 2px solid var(--ink); padding: 0 48px; position: sticky; top: 0; z-index: 100; }
+    .header-top { display: flex; align-items: center; justify-content: space-between; padding: 16px 0 12px; border-bottom: 1px solid var(--divider); }
+    .logo { font-size: 36px; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; line-height: 1; }
+    .logo span { color: var(--neon); }
+    .header-tagline { font-style: italic; font-size: 14px; color: var(--muted); }
+    .header-actions { display: flex; align-items: center; gap: 18px; }
+    .btn-submit { background: var(--neon); color: #fff; padding: 10px 24px; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; border: none; cursor: pointer; transition: background 0.18s; display: inline-block; }
+    .btn-submit:hover { background: var(--neon-dim); }
+    .btn-subscribe { background: transparent; color: #FF2D8A; padding: 10px 24px; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; border: 2px solid #FF2D8A; cursor: pointer; transition: background 0.18s, color 0.18s; display: inline-block; }
+    .btn-subscribe:hover { background: #FF2D8A; color: var(--ink); }
+    .social-icons { display: flex; gap: 14px; align-items: center; }
+    .social-icons a { color: var(--muted); font-size: 15px; transition: color 0.18s; }
+    .social-icons a:hover { color: var(--neon); }
+    nav { display: flex; padding: 10px 0 9px; align-items: center; }
+    nav a { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); padding: 3px 20px 3px 0; margin-right: 20px; border-right: 1px solid var(--divider); transition: color 0.18s; white-space: nowrap; }
+    nav a:last-child { border-right: none; margin-right: 0; }
+    nav a:first-child { padding-left: 0; }
+    nav a:hover { color: var(--neon); }
+    nav a.active { color: var(--neon); }
+    .nav-category-label { font-size: 10px; letter-spacing: 0.2em; color: var(--green); text-transform: uppercase; padding-right: 14px; margin-right: 14px; border-right: 1px solid var(--divider); font-style: italic; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); transition: all 0.25s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { display: none; flex-direction: column; background: var(--cream); border-top: 1px solid var(--divider); padding: 4px 0 12px; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); padding: 13px 24px; border-bottom: 1px solid var(--divider); transition: color 0.18s; }
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-nav a:hover { color: var(--neon); }
+    .page-header { max-width: 1200px; margin: 56px auto 0; padding: 0 48px 36px; border-bottom: 1px solid var(--divider); }
+    .page-header-label { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--neon); font-weight: 700; margin-bottom: 12px; display: block; }
+    .page-header h1 { font-size: 52px; font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; color: var(--ink); }
+    .page-header p { font-size: 18px; font-style: italic; color: var(--muted); margin-top: 12px; line-height: 1.6; }
+    .page-content { max-width: 1200px; margin: 48px auto; padding: 0 48px 80px; }
+    .article-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .article-card { cursor: pointer; }
+    .article-card-img { width: 100%; aspect-ratio: 3/2; display: block; object-fit: cover; }
+    .article-card-img-placeholder { width: 100%; aspect-ratio: 3/2; }
+    .article-card-cat { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--neon); font-weight: 700; margin-top: 14px; display: block; }
+    .article-card-title { font-size: 21px; font-weight: 700; line-height: 1.25; color: var(--ink); margin-top: 7px; transition: color 0.18s; }
+    .article-card:hover .article-card-title { color: var(--green); }
+    .article-card-excerpt { font-size: 15px; font-style: italic; color: var(--muted); margin-top: 8px; line-height: 1.55; }
+    .article-card-meta { font-size: 11px; color: var(--sand); margin-top: 10px; letter-spacing: 0.06em; text-transform: uppercase; }
+    .empty-state { text-align: center; padding: 80px 0; }
+    .empty-state h2 { font-size: 28px; font-weight: 700; color: var(--ink); margin-bottom: 12px; }
+    .empty-state p { font-size: 17px; font-style: italic; color: var(--muted); margin-bottom: 28px; }
+    .empty-state a { background: var(--neon); color: #fff; padding: 12px 28px; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; display: inline-block; transition: background 0.18s; }
+    .empty-state a:hover { background: var(--neon-dim); }
+    .img-1 { background: linear-gradient(160deg, #6B7A2A, #E8D8C8); }
+    .img-2 { background: linear-gradient(160deg, #1C1E2E, #D4A0A8); }
+    .img-3 { background: linear-gradient(160deg, #8B2E3A, #C4956A); }
+    footer { background: #2D0A18; color: var(--sand); padding: 52px 48px; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 48px; }
+    .footer-logo { font-size: 28px; font-weight: 700; color: var(--cream); letter-spacing: -0.02em; }
+    .footer-logo span { color: var(--neon); }
+    .footer-tagline { font-style: italic; font-size: 14px; color: var(--green-light); margin-top: 10px; }
+    .footer-col h4 { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--neon); margin-bottom: 16px; font-weight: 700; }
+    .footer-col a { display: block; font-size: 14px; color: #C8A0B0; margin-bottom: 10px; transition: color 0.18s; }
+    .footer-col a:hover { color: var(--cream); }
+    .footer-bottom { background: #2D0A18; border-top: 1px solid #3D0F28; padding: 16px 48px; text-align: center; }
+    .footer-bottom p { font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+    @media (max-width: 768px) {
+      header { padding: 0 18px; }
+      .header-top { padding: 13px 0 11px; }
+      .header-tagline { display: none; }
+      .logo { font-size: 28px; }
+      .social-icons { display: none; }
+      .btn-subscribe { display: none; }
+      .hamburger { display: flex; }
+      nav { display: none; }
+      .page-header { margin-top: 36px; padding: 0 18px 28px; }
+      .page-header h1 { font-size: 36px; }
+      .page-content { padding: 0 18px 60px; margin-top: 32px; }
+      .article-list { grid-template-columns: 1fr; gap: 32px; }
+      footer { grid-template-columns: 1fr; padding: 36px 18px; gap: 28px; }
+      .footer-bottom { padding: 14px 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">
+    <div class="announcement-track">
+      <div class="announcement-item">We're back <span class="announcement-dot">&middot;</span> <span>Submissions are open</span></div>
+      <div class="announcement-item"><span>Summer 2026</span></div>
+      <div class="announcement-item">By women. For everyone.</div>
+      <div class="announcement-item">Essays &middot; Reviews &middot; The Discourse <span class="announcement-dot">&middot;</span> <span>New this month</span></div>
+      <div class="announcement-item">Fiction &amp; Poetry <span class="announcement-dot">&middot;</span> <span>Submit your work</span></div>
+      <div class="announcement-item">We're back <span class="announcement-dot">&middot;</span> <span>Submissions are open</span></div>
+      <div class="announcement-item"><span>Summer 2026</span></div>
+      <div class="announcement-item">By women. For everyone.</div>
+      <div class="announcement-item">Essays &middot; Reviews &middot; The Discourse <span class="announcement-dot">&middot;</span> <span>New this month</span></div>
+      <div class="announcement-item">Fiction &amp; Poetry <span class="announcement-dot">&middot;</span> <span>Submit your work</span></div>
+    </div>
+  </div>
+  <header>
+    <div class="header-top">
+      <a href="index.html" class="logo">Femi<span>NICHE</span></a>
+      <span class="header-tagline">By women. For everyone.</span>
+      <div class="header-actions">
+        <div class="social-icons">
+          <a href="https://x.com/femiNICHEmag" title="Twitter/X" target="_blank">&#120143;</a>
+          <a href="https://instagram.com/feminichemag" title="Instagram" target="_blank"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line></svg></a>
+          <a href="mailto:feminichemag@gmail.com" title="Email">&#9993;</a>
+        </div>
+        <a href="index.html#newsletter" class="btn-subscribe">Subscribe</a>
+        <a href="feminiche-submit.html" class="btn-submit">Submit</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <nav>
+      <span class="nav-category-label">Pop Culture</span>
+      <a href="essays.html" class="">Essays</a>
+      <a href="reviews.html" class="">Reviews</a>
+      <a href="the-discourse.html" class="">The Discourse</a>
+      <a href="obsessions.html" class="">Obsessions</a>
+      <a href="interviews.html" class="active">Interviews</a>
+      <span class="nav-category-label" style="margin-left:8px;">Creative Writing</span>
+      <a href="fiction.html" class="">Fiction</a>
+      <a href="poetry.html" class="">Poetry</a>
+      <a href="contact.html" style="margin-left:auto; padding-right:0; border-right:none;" class="">Contact</a>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="essays.html">Essays</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="the-discourse.html">The Discourse</a>
+      <a href="obsessions.html">Obsessions</a>
+      <a href="interviews.html">Interviews</a>
+      <a href="fiction.html">Fiction</a>
+      <a href="poetry.html">Poetry</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html#newsletter" style="color:#FF2D8A;font-weight:700;border-top:2px solid var(--ink);">Subscribe to Newsletter</a>
+    </div>
+  </header>
+  <script>
+    const btn = document.getElementById('hamburger');
+    const mnav = document.getElementById('mobileNav');
+    btn.addEventListener('click', () => { btn.classList.toggle('open'); mnav.classList.toggle('open'); });
+  </script>
+
+    <div class="page-header">
+    <span class="page-header-label">Pop Culture</span>
+    <h1>Interviews</h1>
+    <p>Conversations with the people shaping culture right now.</p>
+  </div>
+  <div class="page-content">
+    <div class="article-list">
+      <a href="holly-madison.html" class="article-card">
+        <img src="holly-madison-hero.png" alt="Holly Madison" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
+        <span class="article-card-cat">Interviews</span>
+        <h3 class="article-card-title">Holly Madison on Autism and Female Stardom</h3>
+        <p class="article-card-excerpt">What happens when the women we dismissed as decoration turn out to be the most interesting people in the room?</p>
+        <p class="article-card-meta">Gina-Marie Lobaito &nbsp;&middot;&nbsp; July 7, 2024</p>
+      </a>
+      <a href="diva-bleach.html" class="article-card">
+        <img src="diva-bleach-hero.png" alt="Diva Bleach" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
+        <span class="article-card-cat">Interviews</span>
+        <h3 class="article-card-title">What&rsquo;s New with Diva Bleach?</h3>
+        <p class="article-card-excerpt">We spent 30 minutes with Sydney Roten and Brie Ritter on Zoom to discuss everything Diva Bleach.</p>
+        <p class="article-card-meta">Gina-Marie Lobaito &nbsp;&middot;&nbsp; April 2, 2024</p>
+      </a>
+    </div>
+  </div>
+  </div>
+
+  <footer>
+    <div>
+      <div class="footer-logo">Femi<span>NICHE</span></div>
+      <p class="footer-tagline">By women. For everyone.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Sections</h4>
+      <a href="essays.html">Essays</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="the-discourse.html">The Discourse</a>
+      <a href="obsessions.html">Obsessions</a>
+      <a href="interviews.html">Interviews</a>
+      <a href="fiction.html">Fiction</a>
+      <a href="poetry.html">Poetry</a>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <a href="about.html">Our Story</a>
+      <a href="feminiche-submit.html">Submit Your Work</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html#newsletter" style="color:#FF2D8A;font-weight:700;border-top:2px solid var(--ink);">Subscribe to Newsletter</a>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    <p>&copy; 2026 FemiNICHE &nbsp;&middot;&nbsp; All rights reserved</p>
+  </div>
+</body>
+</html>
