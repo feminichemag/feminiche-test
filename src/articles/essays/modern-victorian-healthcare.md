@@ -21,8 +21,8 @@ intro: "<strong>I am often struck by my own naivety. In my old journal entries I
 bodyBlocks:
   - type: text
     text: >
-      The doctor walks into the small office with a profound sense of urgency,
-      as usual. The appointment was only booked for fifteen minutes, a
+      <strong>The doctor walks into the small office with a profound sense of
+      urgency, as usual. The appointment was only booked for fifteen minutes, a
       shockingly low number even without her need to make it go by faster. She
       hurriedly types my information into the computer, she doesn’t need to ask.
       She tells me, “Make it quick. I'm booked back to back today,” and I turn
@@ -48,7 +48,7 @@ bodyBlocks:
       The beautiful daughter of Ajax, Cassandra, was given the gift of knowledge and prophecy by Apollo, only to be cursed to never be heard. Instead of being gifted the power of prophecy, you are gifted the power to know your own body. In both cases you aren't listened to. Sitting in your bedroom or at a dining table or lecture hall, with the feeling of knowing something is wrong but without the knowledge that someone with a medical degree should be eager to provide. You make jokes to your friends to catch you when you pass out, and expect some laughs or nods of agreement. Instead you get looks of concern, and a warning to take action. You look to professionals, wailing about your own personal Trojan War, hoping that this is when the enigma of your body will be solved.  It's a cycle of hope that repeats itself over and over, always ending in disappointment.
 
 
-      I try to tell my doctor no, that this isn't a matter of insanity. But, she has already assured herself that there's nothing more worth looking into. And I feel like a Victorian woman being prescribed life by the sea for a broken bone. I think of the next months of waiting before this cycle of explanations begins again. And again. And again. 
+      I try to tell my doctor no, that this isn't a matter of insanity. But, she has already assured herself that there's nothing more worth looking into. And I feel like a Victorian woman being prescribed life by the sea for a broken bone. I think of the next months of waiting before this cycle of explanations begins again. And again. And again.<strong> 
 authorBio: Alima Shahid is a creative nonfiction writer from Mississauga. Her
   essays and short stories are inspired by mundanity and the rhythms of everyday
   life. She studies English at Toronto Metropolitan University, where her
