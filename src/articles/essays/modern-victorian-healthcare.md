@@ -10,14 +10,14 @@ excerpt: "The beautiful daughter of Ajax, Cassandra, was given the gift of
   knowledge and prophecy by Apollo, only to be cursed to never be heard. Instead
   of being gifted the power of prophecy, you are gifted the power to know your
   own body. In both cases you aren't listened to. "
-intro: "I am often struck by my own naivety. In my old journal entries I wrote
-  about my pain, the soreness in my joints, the world spinning, and the feeling
-  of pressure building behind my eyes. In the end I still managed to write: “I
-  can't wait to reread this when my life is without pain, to look back at these
-  moments where it overwhelmed me with a small sad smile.” It's funny, almost.
-  It's funny how obvious my hope was, the faith that I had in a broken system, a
-  system that wishes not for accurate diagnosis, but a confirmation of female
-  hysterics."
+intro: "<strong>I am often struck by my own naivety. In my old journal entries I
+  wrote about my pain, the soreness in my joints, the world spinning, and the
+  feeling of pressure building behind my eyes. In the end I still managed to
+  write: “I can't wait to reread this when my life is without pain, to look back
+  at these moments where it overwhelmed me with a small sad smile.” It's funny,
+  almost. It's funny how obvious my hope was, the faith that I had in a broken
+  system, a system that wishes not for accurate diagnosis, but a confirmation of
+  female hysterics.<strong>"
 bodyBlocks:
   - type: text
     text: >-
