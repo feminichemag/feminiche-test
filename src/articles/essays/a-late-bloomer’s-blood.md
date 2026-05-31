@@ -56,4 +56,10 @@ bodyBlocks:
 
 
       As I heard my son’s heartbeat on the monitor, I wanted to reach back in time and hug that 14-year-old girl, still six months away from her first period. You’re OK, I’d tell her, to the rhythm of my son’s blood. You’re OK. You’re normal. It’s OK. You’re good.
+authorBio: Alaina Hammond is a poet, playwright, fiction writer, and visual
+  artist. Her novelette “Jillian, Formerly Known as Frog Girl” won the Magnum
+  Foof, the award bestowed by Foofaraw Press. Her short story “It Starts With
+  Then Shadows” was a winner of <em>eMerge Magazine’s</em> Nikki Hanna Literary
+  Challenge. She’s a four-time nominee for the Pushcart Prize, all in the
+  category of fiction, and a two-time nominee for Best Microfiction.
 ---
