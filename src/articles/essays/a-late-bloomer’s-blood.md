@@ -17,7 +17,7 @@ intro: <strong>I was within the higher range of what’s considered medically
   teachers, too. Unspoken things are no less known.</strong>
 bodyBlocks:
   - type: text
-    text: >-
+    text: >
       Your doctor can tell you there’s nothing to worry about. Which there
       isn’t, in a strictly technical sense. You nod along because you understand
       that science is its own language. An abstract language that has nothing to
