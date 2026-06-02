@@ -61,9 +61,9 @@ poems:
       Shivering in a tiger mini and torn shirt I’d fabric markered with the
       cartoons from Rocket to Russia, I clutched my fake ID, breath held until
       the bouncers let me in. This was the world I wanted, not suburban high
-      school where taunts of Your hair is blue! changed to Your hair is green!
-      as Krazy Kolor faded. Not being told there’s a “right way” to understand
-      Jane Eyre.
+      school where taunts of <em>Your hair is blue!</em> changed to <em>Your
+      hair is green!</em> as Krazy Kolor faded. Not being told there’s a “right
+      way” to understand <em>Jane Eyre.</em>
 
 
       One two three four! No costumes, no audience banter. Just the Ramones, their music, the energy of the crowd joining the energy of the songs, amplifying and sending it back and forth between audience and band. Dee Dee handing out guitar picks, which I later poked holes in and wore as earrings. Joey’s arm extended like a preacher’s. Reader, I married them.
