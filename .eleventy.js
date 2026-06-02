@@ -34,7 +34,7 @@ module.exports = function(eleventyConfig) {
         return '<figure class="inline-image" style="margin: 32px 0;"><img src="' + b.image + '" alt="' + (b.alt || '') + '" style="width:100%;display:block;" />' + caption + '</figure>';
       }
       if (b.type === "quote" && b.text) {
-        return '<blockquote style="font-size: 24px; font-style: italic; color: var(--neon); border-left: 3px solid var(--neon); padding-left: 24px; margin: 36px 0; line-height: 1.5;">"' + b.text + '"</blockquote>';
+        return '<blockquote style="font-size: 24px; font-style: italic; color: var(--neon); border-left: 3px solid var(--neon); padding-left: 24px; margin: 36px 0; line-height: 1.5;">' + b.text + '</blockquote>';
       }
       if (b.type === "html" && b.html) {
         return b.html;
