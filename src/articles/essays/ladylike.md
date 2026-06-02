@@ -41,6 +41,7 @@ bodyBlocks:
 
       A Lady would:
 
+
       •     see that her skirt covered her knees (and that the knees were continually kept togeth­er),
 
       •      always possess a clean handkerchief (or tissue) in her purse,
@@ -49,7 +50,9 @@ bodyBlocks:
 
       •      keep a sharp eye out for the showing of her slip from beneath her skirt hem.
 
+
       A Lady did not:
+
 
       •       speak too loudly,
 
