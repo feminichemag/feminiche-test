@@ -76,6 +76,11 @@ poems:
       Thinning bones still long for flight.
 
       What wings now, what chords?
+
+
+
+
+      <em>Hero photo by daveiam, via Wikimedia Commons, CC BY 2.0</em>
 authorBio: Alison Stone is the author of nine full-length collections, Informed
   (NYQ Books, 2024), To See What Rises (CW Books, 2023), Zombies at the Disco
   (Jacar Press, 2020), Caught in the Myth (NYQ Books, 2019), Dazzle (Jacar
