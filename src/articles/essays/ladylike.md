@@ -7,13 +7,14 @@ heroImage: /uploads/service-pnp-cph-3b20000-3b22000-3b22500-3b22541r.jpg
 heroCaption: Library of Congress, Prints & Photographs Division.
 excerpt: There was more than just water separating factors in the South during
   the 1950s.
-intro: A ferry was once the only way to traverse the broad body of water called
-  the Chesapeake Bay from the Delmarva Peninsula to the military, cultural and
-  transportation hub of Norfolk-Hampton Roads, Virginia. After you left behind
-  the docks at Little Creek, there was nothing vis­ible but a vast expanse of
-  water on all sides, and you were free to pretend you were adrift in the North
-  Atlantic. Now, of course, there is the superb Chesapeake Bay Bridge-Tunnel;
-  however, that engineering feat was still a decade away.
+intro: <strong>A ferry was once the only way to traverse the broad body of water
+  called the Chesapeake Bay from the Delmarva Peninsula to the military,
+  cultural and transportation hub of Norfolk-Hampton Roads, Virginia. After you
+  left behind the docks at Little Creek, there was nothing vis­ible but a vast
+  expanse of water on all sides, and you were free to pretend you were adrift in
+  the North Atlantic. Now, of course, there is the superb Chesapeake Bay
+  Bridge-Tunnel; however, that engineering feat was still a decade
+  away.</strong>
 bodyBlocks:
   - type: text
     text: >
