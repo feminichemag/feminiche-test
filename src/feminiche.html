@@ -468,6 +468,105 @@
 
     .obsession-title:hover { color: var(--neon); }
 
+    /* ── CONTRIBUTOR SPOTLIGHT ── */
+    .contributor-spotlight {
+      padding-left: 36px;
+      display: flex;
+      flex-direction: column;
+    }
+    .spotlight-label {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink);
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--ink);
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    .spotlight-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      background: var(--parchment);
+    }
+    .spotlight-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-top: 14px;
+      line-height: 1.2;
+    }
+    .spotlight-role {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--neon);
+      margin-top: 5px;
+      font-weight: 700;
+    }
+    .spotlight-socials {
+      display: flex;
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .spotlight-socials a {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--divider);
+      padding-bottom: 2px;
+      transition: color 0.18s;
+    }
+    .spotlight-socials a:hover { color: var(--neon); }
+    .spotlight-link {
+      display: inline-block;
+      margin-top: 18px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--neon);
+      border-bottom: 1px solid var(--neon);
+      padding-bottom: 2px;
+      transition: opacity 0.18s;
+    }
+    .spotlight-link:hover { opacity: 0.7; }
+
+    /* ── INSTAGRAM SECTION ── */
+    .instagram-section {
+      max-width: 1200px;
+      margin: 52px auto 0;
+      padding: 0 48px 52px;
+      border-top: 1px solid var(--divider);
+      padding-top: 44px;
+    }
+    .instagram-section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .instagram-section-label {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink);
+      font-weight: 700;
+    }
+    .instagram-section-handle {
+      font-size: 12px;
+      color: var(--neon);
+      font-style: italic;
+    }
+    .instagram-embed-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
     /* ── WIDE FEATURE ── */
     .wide-feature {
       max-width: 1200px;
@@ -842,38 +941,16 @@
       <p class="hero-meta">By Marlene DeVere &nbsp;&middot;&nbsp; June 2, 2026</p>
     </div>
 
-    <aside class="hero-sidebar">
-      <div class="sidebar-label">Also Reading</div>
-<a href="modern-victorian-healthcare.html" class="sidebar-article">
-  <span class="sidebar-cat">Essays</span>
-  <h3 class="sidebar-title">Modern Victorian Healthcare</h3>
-  <p class="sidebar-meta">Alima Shahid &middot; May 24, 2026</p>
-</a>
-      <a href="/three-poems-by-alison-stone/" class="sidebar-article">
-  <span class="sidebar-cat">Poetry</span>
-  <h3 class="sidebar-title">Three Poems by Alison Stone</h3>
-  <p class="sidebar-meta">Alison Stone &middot; June 2, 2026</p>
-</a>
-
-      <a href="thanksgiving-1983.html" class="sidebar-article">
-        <span class="sidebar-cat">Fiction</span>
-        <h3 class="sidebar-title">&ldquo;Thanksgiving Weekend, 1983&rdquo;</h3>
-        <p class="sidebar-meta">Mariam Awad &middot; May 22, 2026</p>
-      </a>
-
-      <a href="/ladylike/" class="sidebar-article">
-        <span class="sidebar-cat">Essays</span>
-        <h3 class="sidebar-title">Ladylike</h3>
-        <p class="sidebar-meta">B.A. Brittingham &nbsp;&middot;&nbsp; June 2, 2026</p>
-      </a>
-
-      <a href="diva-bleach.html" class="sidebar-article">
-        <span class="sidebar-cat">Interviews</span>
-        <h3 class="sidebar-title">What's New with Diva Bleach?</h3>
-        <p class="sidebar-meta">April 2, 2024</p>
-      </a>
-
-
+    <aside class="contributor-spotlight">
+      <div class="spotlight-label">Contributor Spotlight</div>
+      <div style="width:80px;height:80px;border-radius:50%;background:var(--parchment);display:block;"></div>
+      <p class="spotlight-name">Shana Yousef</p>
+      <p class="spotlight-role">Pop Culture Correspondent</p>
+      <div class="spotlight-socials">
+        <a href="https://instagram.com/shanayousef" target="_blank">@shanayousef</a>
+        <a href="https://x.com/shanainparis" target="_blank">@shanainparis</a>
+      </div>
+      <a href="emily-in-paris.html" class="spotlight-link">Read her latest &rarr;</a>
     </aside>
   </section>
 
@@ -933,32 +1010,61 @@
   <div class="obsessions-strip">
     <div class="obsessions-label">We're Obsessed With</div>
     <div class="obsession-item">
-      <span class="obsession-type">Show</span>
-      <span class="obsession-title">Emily in Paris</span>
+      <span class="obsession-type">Colour</span>
+      <span class="obsession-title">Olive Green</span>
     </div>
     <div class="obsession-item">
       <span class="obsession-type">Artist</span>
-      <span class="obsession-title">Olivia Rodrigo</span>
+      <span class="obsession-title">The Weeknd</span>
     </div>
     <div class="obsession-item">
       <span class="obsession-type">Film</span>
-      <span class="obsession-title"><em>Elvis</em> (2022)</span>
+      <span class="obsession-title"><em>Whiplash</em> (2014)</span>
+    </div>
+    <div class="obsession-item">
+      <span class="obsession-type">Making</span>
+      <span class="obsession-title">Homemade Zines</span>
     </div>
   </div>
 
-  <!-- Archive Feature -->
+  <!-- Archive Feature (compact) -->
   <div class="section-header" style="margin-top: 52px;">
     <h2>From the Archive</h2>
     <div class="section-header-line"></div>
   </div>
-
-  <div class="wide-feature">
-    <img src="diva-bleach-hero.png" alt="Diva Bleach" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;" />
-    <div class="wide-feature-content">
+  <div style="max-width:1200px;margin:24px auto 0;padding:0 48px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;border-bottom:1px solid var(--divider);padding-bottom:52px;">
+    <div class="article-card">
+      <img src="diva-bleach-hero.png" alt="Diva Bleach" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
       <span class="article-card-cat">Interviews &nbsp;/&nbsp; Archive</span>
-      <a href="diva-bleach.html"><h2 style="font-family:'Hoefler Text','Georgia',serif;font-size:34px;font-weight:700;line-height:1.1;color:var(--ink);margin-top:10px;letter-spacing:-0.02em;">What's New with Diva Bleach?</h2></a>
-      <p style="font-style:italic;font-size:17px;color:var(--muted);margin-top:14px;line-height:1.6;">We spent 30 minutes with Sydney Roten and Brie Ritter on Zoom to discuss everything Diva Bleach &mdash; their musical inspirations, their upcoming tour, and what's next for the band.</p>
-      <p style="font-size:12px;color:var(--sand);margin-top:18px;text-transform:uppercase;letter-spacing:0.08em;">April 2, 2024 &nbsp;&middot;&nbsp; 5 min read</p>
+      <a href="diva-bleach.html"><h3 class="article-card-title">What's New with Diva Bleach?</h3></a>
+      <p class="article-card-excerpt">We spent 30 minutes with Sydney Roten and Brie Ritter on Zoom to discuss everything Diva Bleach.</p>
+      <p class="article-card-meta">April 2, 2024</p>
+    </div>
+    <div class="article-card">
+      <img src="holly-madison-hero.png" alt="Holly Madison" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
+      <span class="article-card-cat">Interviews &nbsp;/&nbsp; Archive</span>
+      <a href="holly-madison.html"><h3 class="article-card-title">Holly Madison on Autism, Female Stardom, and the Stories We Were Never Told</h3></a>
+      <p class="article-card-excerpt">A conversation about neurodivergence, the Playboy mansion, and rewriting your own story.</p>
+      <p class="article-card-meta">July 7, 2024</p>
+    </div>
+    <div class="article-card">
+      <img src="thanksgiving-1983-hero.jpg" alt="Thanksgiving Weekend, 1983" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
+      <span class="article-card-cat">Fiction &nbsp;/&nbsp; Archive</span>
+      <a href="thanksgiving-1983.html"><h3 class="article-card-title">&ldquo;Thanksgiving Weekend, 1983&rdquo;</h3></a>
+      <p class="article-card-excerpt">&ldquo;I want to savour this moment, this fleeting morsel of peace and nostalgia we&rsquo;ve found ourselves with.&rdquo;</p>
+      <p class="article-card-meta">Mariam Awad &nbsp;&middot;&nbsp; May 22, 2026</p>
+    </div>
+  </div>
+
+  <!-- Instagram -->
+  <div class="instagram-section">
+    <div class="instagram-section-header">
+      <span class="instagram-section-label">On Instagram</span>
+      <a href="https://instagram.com/feminichemag" target="_blank" class="instagram-section-handle">@feminichemag</a>
+    </div>
+    <div class="instagram-embed-wrapper">
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DY2Wc-GDj2Y/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:99.375%;width:-webkit-calc(100% - 2px);width:calc(100% - 2px);"><div style="padding:16px;"><a href="https://www.instagram.com/p/DY2Wc-GDj2Y/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFFFFF;line-height:0;padding:0 0;text-align:center;text-decoration:none;width:100%;" target="_blank"><div style="display:flex;flex-direction:row;align-items:center;"><div style="background-color:#F4F4F4;border-radius:50%;flex-grow:0;height:40px;margin-right:14px;width:40px;"></div><div style="display:flex;flex-direction:column;flex-grow:1;justify-content:center;"><div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;margin-bottom:6px;width:100px;"></div><div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;width:60px;"></div></div></div><div style="padding:19% 0;"></div><div style="display:block;height:50px;margin:0 auto 12px;width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top:8px;"><div style="color:#3897f0;font-family:Arial,sans-serif;font-size:14px;font-style:normal;font-weight:550;line-height:18px;">View this post on Instagram</div></div><div style="padding:12.5% 0;"></div><div style="display:flex;flex-direction:row;margin-bottom:14px;align-items:center;"><div><div style="background-color:#F4F4F4;border-radius:50%;height:12.5px;width:12.5px;transform:translateX(0px) translateY(7px);"></div><div style="background-color:#F4F4F4;height:12.5px;transform:rotate(-45deg) translateX(3px) translateY(1px);width:12.5px;flex-grow:0;margin-right:14px;margin-left:2px;"></div><div style="background-color:#F4F4F4;border-radius:50%;height:12.5px;width:12.5px;transform:translateX(9px) translateY(-18px);"></div></div><div style="margin-left:8px;"><div style="background-color:#F4F4F4;border-radius:50%;flex-grow:0;height:20px;width:20px;"></div><div style="width:0;height:0;border-top:2px solid transparent;border-left:6px solid #f4f4f4;border-bottom:2px solid transparent;transform:translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left:auto;"><div style="width:0px;border-top:8px solid #F4F4F4;border-right:8px solid transparent;transform:translateY(16px);"></div><div style="background-color:#F4F4F4;flex-grow:0;height:12px;width:16px;transform:translateY(-4px);"></div><div style="width:0;height:0;border-top:8px solid #F4F4F4;border-left:8px solid transparent;transform:translateY(-4px) translateX(8px);"></div></div></div><div style="display:flex;flex-direction:column;flex-grow:1;justify-content:center;margin-bottom:24px;"><div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;margin-bottom:6px;width:224px;"></div><div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;width:144px;"></div></div></a><p style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;line-height:17px;margin-bottom:0;margin-top:8px;overflow:hidden;padding:8px 0 7px;text-align:center;text-overflow:ellipsis;white-space:nowrap;"><a href="https://www.instagram.com/p/DY2Wc-GDj2Y/?utm_source=ig_embed&amp;utm_campaign=loading" style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;font-style:normal;font-weight:normal;line-height:17px;text-decoration:none;" target="_blank">A post shared by FemiNICHE Magazine (@feminichemag)</a></p></div></blockquote>
+      <script async src="//www.instagram.com/embed.js"></script>
     </div>
   </div>
 
