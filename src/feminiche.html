@@ -479,6 +479,7 @@
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--ink);
+      padding-top: 12px;
       padding-bottom: 12px;
       border-bottom: 2px solid var(--ink);
       margin-bottom: 20px;
@@ -785,6 +786,10 @@
 
     /* ── MOBILE ── */
     @media (max-width: 768px) {
+      .archive-scroll-wrapper { padding: 0 0 0 18px !important; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .archive-grid { grid-template-columns: repeat(3, 280px) !important; gap: 20px !important; padding-right: 18px; }
+      .archive-scroll-wrapper { border-bottom: none !important; padding-bottom: 0 !important; }
+
 
       header { padding: 0 18px; }
       .header-top { padding: 13px 0 11px; }
@@ -943,7 +948,7 @@
 
     <aside class="contributor-spotlight">
       <div class="spotlight-label">Contributor Spotlight</div>
-      <img src="/uploads/shana.png" alt="Shana Yousef" style="width:80px;height:80px;border-radius:50%;object-fit:cover;display:block;" />
+      <div style="width:80px;height:80px;border-radius:50%;background:var(--parchment);display:block;"></div>
       <p class="spotlight-name">Shana Yousef</p>
       <p class="spotlight-role">Pop Culture Correspondent</p>
       <div class="spotlight-socials">
@@ -951,14 +956,6 @@
         <a href="https://x.com/shanainparis" target="_blank">@shanainparis</a>
       </div>
       <a href="emily-in-paris.html" class="spotlight-link">Read her latest &rarr;</a>
-      <div style="margin-top:28px;border-top:1px solid var(--divider);padding-top:20px;">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
-          <span style="font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);font-weight:700;">On Instagram</span>
-          <a href="https://instagram.com/feminichemag" target="_blank" style="font-size:12px;color:var(--neon);font-style:italic;">@feminichemag</a>
-        </div>
-        <div style="transform:scale(0.75);transform-origin:top left;width:133%;"><blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DY2Wc-GDj2Y/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:0;max-width:100%;min-width:0;padding:0;width:100%;"><div style="padding:16px;"><a href="https://www.instagram.com/p/DY2Wc-GDj2Y/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFFFFF;line-height:0;padding:0 0;text-align:center;text-decoration:none;width:100%;" target="_blank"><div style="display:flex;flex-direction:row;align-items:center;"><div style="background-color:#F4F4F4;border-radius:50%;flex-grow:0;height:40px;margin-right:14px;width:40px;"></div><div style="display:flex;flex-direction:column;flex-grow:1;justify-content:center;"><div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;margin-bottom:6px;width:100px;"></div><div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;width:60px;"></div></div></div><div style="padding:19% 0;"></div><div style="padding-top:8px;"><div style="color:#3897f0;font-family:Arial,sans-serif;font-size:14px;font-style:normal;font-weight:550;line-height:18px;">View this post on Instagram</div></div><div style="padding:12.5% 0;"></div></a><p style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;line-height:17px;margin-bottom:0;margin-top:8px;overflow:hidden;padding:8px 0 7px;text-align:center;text-overflow:ellipsis;white-space:nowrap;"><a href="https://www.instagram.com/p/DY2Wc-GDj2Y/?utm_source=ig_embed&amp;utm_campaign=loading" style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;font-style:normal;font-weight:normal;line-height:17px;text-decoration:none;" target="_blank">A post shared by FemiNICHE Magazine (@feminichemag)</a></p></div></blockquote>
-        <script async src="//www.instagram.com/embed.js"></script></div>
-      </div>
     </aside>
   </section>
 
@@ -1045,7 +1042,8 @@
     <h2>From the Archive</h2>
     <div class="section-header-line"></div>
   </div>
-  <div style="max-width:1200px;margin:24px auto 0;padding:0 48px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;border-bottom:1px solid var(--divider);padding-bottom:52px;">
+  <div class="archive-scroll-wrapper" style="max-width:1200px;margin:24px auto 0;padding:0 48px 0;border-bottom:1px solid var(--divider);padding-bottom:52px;">
+  <div class="archive-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;">
     <div class="article-card">
       <img src="diva-bleach-hero.png" alt="Diva Bleach" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
       <span class="article-card-cat">Interviews &nbsp;/&nbsp; Archive</span>
@@ -1068,6 +1066,8 @@
       <p class="article-card-meta">Mariam Awad &nbsp;&middot;&nbsp; May 22, 2026</p>
     </div>
   </div>
+  </div>
+
 
   <!-- Newsletter -->
   <div class="newsletter-strip" id="newsletter">
