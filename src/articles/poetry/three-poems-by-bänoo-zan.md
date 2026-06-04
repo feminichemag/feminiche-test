@@ -284,11 +284,14 @@ poems:
       <span style="font-size:13px; color:#8A6858;">³ Seyyed Javad Zabihi (1931-1981)
 
       ⁴ In Iranian mythology, Arash is the heroic archer whose arrow determined the boundary between Iran and the enemy land Turan. Arash put his life in the arrow, and it travelled for days before it landed on the other side of the Oxus River on the bark of a walnut tree hundreds of miles away.</span>
-authorBio: "Bänoo Zan is a poet, translator, and curator, with numerous
-  published pieces and books, including Songs of Exile and Letters to My Father.
-  She is the founder of Shab-e She’r (Poetry Night), Canada’s most diverse and
-  brave poetry open mic series (inception 2012). Bänoo, with Cy Strom, is the
-  co-editor of the anthology: Woman Life Freedom: Poems for the Iranian
-  Revolution. She is the recipient of the 2025 Writers’ Union of Canada Freedom
-  to Read Award. "
+authorBio: >-
+  Bänoo Zan is a poet, translator, and curator, with numerous published pieces
+  and books, including Songs of Exile and Letters to My Father. She is the
+  founder of Shab-e She’r (Poetry Night), Canada’s most diverse and brave poetry
+  open mic series (inception 2012). Bänoo, with Cy Strom, is the co-editor of
+  the anthology: Woman Life Freedom: Poems for the Iranian Revolution. She is
+  the recipient of the 2025 Writers’ Union of Canada Freedom to Read Award. 
+
+
+  Hero photo: Darafsh Kaviyani, via Wikimedia Commons, CC BY-SA 3.0
 ---
