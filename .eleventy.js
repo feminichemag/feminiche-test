@@ -12,7 +12,8 @@ module.exports = function(eleventyConfig) {
   // Date filter
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     if (!dateObj) return "";
-    const d = new Date(dateObj + 'T12:00:00');
+    const d = new Date(dateObj);
+const adjusted = new Date(d.getTime() + d.getTimezoneOffset() * 60000);
     return d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
   });
 
