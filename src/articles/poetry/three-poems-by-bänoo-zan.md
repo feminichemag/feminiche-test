@@ -2,7 +2,7 @@
 layout: article-poetry.njk
 title: Three Poems by Bänoo Zan
 author: Bänoo Zan
-date: 2026-06-04T22:48:00.000-04:00
+date: 2026-06-04T12:48:00.000-04:00
 excerpt: We are so alive / a thousand thousand deaths / won’t bring us to our knees
 poems:
   - title: A Voice from Prison
