@@ -2,7 +2,7 @@
 layout: article-poetry.njk
 title: Three Poems by Alison Stone
 author: Alison Stone
-date: 2026-06-03T16:40:00.000-04:00
+date: 2026-06-03T12:40:00.000-04:00
 excerpt: Squirrels, I’ve read, forget / where they’ve hidden a third of their
   nuts. / I’ve forgotten where I’ve hidden / more than a third of my pain.
 poems:
