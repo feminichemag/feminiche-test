@@ -2,7 +2,7 @@
 layout: article-poetry.njk
 title: Three Poems by Cleo Griffith
 author: Cleo Griffith
-date: 2026-06-01T12:57:00.000-04:00
+date: 2026-06-12T13:44:00.000-04:00
 excerpt: This was not the plan—to grow old. / In youth’s brief time youth seemed
   forever— how cruel.
 poems:
