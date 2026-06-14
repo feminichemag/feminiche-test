@@ -33,7 +33,7 @@ bodyBlocks:
     caption: <em>Mad Mabel</em> by Sally Hepworth. Cover image courtesy of the
       publisher.
   - type: text
-    text: >
+    text: >+
       Sometimes I can’t put away my writer-hat while I am reading. Which is
       handy because then every book can become its own masterclass in craft.
       <em>Mad Mabel</em> by Sally Hepworth is an exemplar of literary voice. One
