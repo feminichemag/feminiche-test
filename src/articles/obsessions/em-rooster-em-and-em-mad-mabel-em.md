@@ -33,7 +33,7 @@ bodyBlocks:
     caption: <em>Mad Mabel</em> by Sally Hepworth. Cover image courtesy of the
       publisher.
   - type: text
-    text: >+
+    text: >
       Sometimes I can’t put away my writer-hat while I am reading. Which is
       handy because then every book can become its own masterclass in craft.
       <em>Mad Mabel</em> by Sally Hepworth is an exemplar of literary voice. One
@@ -46,4 +46,16 @@ bodyBlocks:
 
 
       A morally grey, feisty female protagonist in her golden years, there is a lot to love in Mabel. Perhaps sanity is subjective, as the tagline suggests, but, in insane circumstances, aren’t we all a little mad here?
+authorBio: "Amy's short fiction has appeared in multiple international
+  anthologies, including Belladonna's Fiction, Scribbled, emerge25, and Home for
+  the Holidays. Her story, Another Fish in the Sea (Nicole Frail Books), reached
+  #1 in its Kindle category. Her YA manuscript Little Acts of Useless Rebellion
+  was second runner-up for the 2023 Leapfrog Global Fiction Prize, and Waxing
+  Arcadia was longlisted for the 2025 prize. She is an alumna of  The Yale
+  Writers' Workshop (2021-2024), SFU Writers' Studio, and was selected for the
+  McLoughlin Gardens Artist Residency (2024/25). When not writing, she works as
+  a registered clinical counsellor, tends to animals on her small farm, mothers
+  two wonderful neurodivergent teens, and makes pottery. Her last great
+  adventure was trekking to Everest Base Camp at 40; publishing her novels, she
+  hopes, will be the next."
 ---
