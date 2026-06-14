@@ -175,6 +175,7 @@ collections:
       - { label: "Layout", name: "layout", widget: "hidden", default: "article-obsession.njk" }
       - { label: "Title (what you're obsessed with)", name: "title", widget: "string" }
       - { label: "Author", name: "author", widget: "string" }
+      - { label: "Author Role (optional)", name: "role", widget: "string", required: false, hint: "e.g. Contributing Writer" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Hero Image", name: "heroImage", widget: "image", required: false }
       - { label: "Hero Alt", name: "heroAlt", widget: "string", required: false }
@@ -199,6 +200,14 @@ collections:
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Alt", name: "alt", widget: "string", required: false }
               - { label: "Caption", name: "caption", widget: "string", required: false }
+          - label: "Pull Quote"
+            name: "quote"
+            widget: "object"
+            fields:
+              - { label: "Type", name: "type", widget: "hidden", default: "quote" }
+              - { label: "Quote text", name: "text", widget: "string" }
+      - { label: "Outro (optional, italic gray text)", name: "outro", widget: "text", required: false }
+      - { label: "Author Bio (optional)", name: "authorBio", widget: "text", required: false }
 
   # INTERVIEWS
   - name: "interviews"
@@ -298,6 +307,9 @@ collections:
       - { label: "Title (or collection name)", name: "title", widget: "string" }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Hero Image", name: "heroImage", widget: "image", required: false }
+      - { label: "Hero Alt", name: "heroAlt", widget: "string", required: false }
+      - { label: "Hero Caption", name: "heroCaption", widget: "string", required: false }
       - { label: "Excerpt", name: "excerpt", widget: "string", required: false }
       - label: "Poems"
         name: "poems"
