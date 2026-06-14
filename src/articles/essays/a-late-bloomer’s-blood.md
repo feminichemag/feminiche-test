@@ -59,7 +59,7 @@ bodyBlocks:
 authorBio: Alaina Hammond is a poet, playwright, fiction writer, and visual
   artist. Her novelette “Jillian, Formerly Known as Frog Girl” won the Magnum
   Foof, the award bestowed by Foofaraw Press. Her short story “It Starts With
-  Then Shadows” was a winner of <em>eMerge Magazine’s</em> Nikki Hanna Literary
+  The Shadows” was a winner of <em>eMerge Magazine’s</em> Nikki Hanna Literary
   Challenge. She’s a four-time nominee for the Pushcart Prize, all in the
   category of fiction, and a two-time nominee for Best Microfiction.
 ---
