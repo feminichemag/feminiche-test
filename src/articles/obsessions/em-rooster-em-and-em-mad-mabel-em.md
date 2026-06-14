@@ -5,7 +5,8 @@ author: Amy Kelly
 date: 2026-06-14T11:25:00.000-04:00
 heroImage: /uploads/steve-carell.webp
 heroCaption: Steve Carell in <em>Rooster</em> (HBO, 2026). Image courtesy HBO.
-intro: <strong>Everyone in Rooster is a little messy and I am here for it.</strong>
+intro: <strong>Everyone in <em>Rooster</em> is a little messy and I am here for
+  it.</strong>
 bodyBlocks:
   - type: text
     text: >
