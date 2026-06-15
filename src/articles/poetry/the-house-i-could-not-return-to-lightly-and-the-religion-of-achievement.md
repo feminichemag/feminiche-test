@@ -4,6 +4,7 @@ title: '"The House I Could Not Return To Lightly" and "The Religion of Achieveme
 author: Rezel Perohan
 date: 2026-06-15T13:23:00.000-04:00
 heroImage: /uploads/rezel.jpg
+heroCaption: Photo from Pexels.com.
 poems:
   - text: |
       There were days
