@@ -58,7 +58,6 @@
     .mobile-nav a:last-child { border-bottom: none; }
     .mobile-nav a:hover { color: var(--neon); }
 
-    /* ── ARTICLE HEADER ── */
     .article-header { max-width: 720px; margin: 64px auto 0; padding: 0 48px 40px; border-bottom: 1px solid var(--divider); }
     .article-breadcrumb { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--neon); font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
     .article-breadcrumb a { color: var(--muted); transition: color 0.18s; }
@@ -72,12 +71,10 @@
     .article-role { font-size: 13px; font-style: italic; color: var(--sand); }
     .article-date { font-size: 13px; color: var(--sand); font-style: italic; margin-left: auto; }
 
-    /* ── HERO IMAGE ── */
     .article-hero-image { max-width: 720px; margin: 0 auto; padding: 40px 48px 0; }
     .article-hero-image img { width: 100%; display: block; }
     .img-caption { font-size: 12px; font-style: italic; color: var(--sand); margin-top: 10px; }
 
-    /* ── ARTICLE BODY ── */
     .article-body { max-width: 720px; margin: 0 auto; padding: 44px 48px 0; }
     .article-body p { margin-bottom: 24px; font-size: 18px; line-height: 1.8; color: var(--ink); }
     .article-body p.first::first-letter {
@@ -91,15 +88,12 @@
     }
     .article-body .scene-break { text-align: center; margin: 36px 0; color: var(--divider); letter-spacing: 0.6em; font-size: 14px; }
     .pull-quote { font-size: 24px; font-style: italic; line-height: 1.4; color: var(--neon-dim); border-left: 3px solid var(--neon); padding: 8px 0 8px 24px; margin: 36px 0; }
-
     .article-outro { font-size: 16px; font-style: italic; color: var(--sand); margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--divider); line-height: 1.7; }
 
-    /* ── AUTHOR BIO ── */
     .author-bio { max-width: 720px; margin: 52px auto 0; padding: 28px 48px; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--divider); display: flex; gap: 20px; align-items: flex-start; }
     .author-bio-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--neon); font-weight: 700; white-space: nowrap; padding-top: 3px; }
     .author-bio-text { font-size: 15px; font-style: italic; color: var(--muted); line-height: 1.65; }
 
-    /* ── READ MORE ── */
     .read-more { max-width: 720px; margin: 0 auto; padding: 0 48px 80px; border-top: 1px solid var(--divider); padding-top: 48px; }
     .read-more-header { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
     .read-more-header h2 { font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink); font-weight: 700; white-space: nowrap; }
@@ -209,7 +203,6 @@
     btn.addEventListener('click', () => { btn.classList.toggle('open'); mnav.classList.toggle('open'); });
   </script>
 
-  <!-- Article Header -->
   <div class="article-header">
     <div class="article-breadcrumb">
       <a href="index.html">Home</a>
@@ -226,25 +219,22 @@
     </div>
   </div>
 
-  <!-- Hero Image -->
   {% if heroImage %}<div class="article-hero-image">
     <img src="{{ heroImage }}" alt="{{ heroAlt | default(title) }}" style="width:100%;display:block;" />
     {% if heroCaption %}<p class="img-caption">{{ heroCaption | safe }}</p>{% endif %}
   </div>{% endif %}
 
-  <!-- Article Body -->
   <div class="article-body">
     {{ bodyBlocks | renderBody | safe }}
     {% if outro %}<p class="article-outro">{{ outro | safe }}</p>{% endif %}
+    <p style="margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--divider); font-style: italic; color: var(--sand); font-size: 15px;">Stay in the niche. There's more where this came from on our newsletter...<a href="https://feminiche-newsletter.beehiiv.com" target="_blank" style="color: #FF2D8A; font-weight: 700; text-decoration: none;">subscribe now</a>.</p>
   </div>
 
-  <!-- Author Bio -->
   {% if authorBio %}<div class="author-bio">
     <div class="author-bio-label">About the Author</div>
     <p class="author-bio-text">{{ authorBio | safe }}</p>
   </div>{% endif %}
 
-  <!-- Read More -->
   <div class="read-more">
     <div class="read-more-header">
       <h2>Also Reading</h2>
