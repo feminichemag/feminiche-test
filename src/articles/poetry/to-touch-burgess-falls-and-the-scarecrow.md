@@ -4,6 +4,7 @@ title: '"To Touch Burgess Falls" and "The Scarecrow"'
 author: Korrine Key
 date: 2026-06-21T15:50:00.000-04:00
 heroImage: /uploads/pexels-yusronell-11015089.jpg
+heroCaption: Photo by Yusron El Jihan on Pexels.com.
 excerpt: Her tongue, the falls, softly licks my olive shoulders / that rise to
   breath and sheltering slender hands.
 poems:
