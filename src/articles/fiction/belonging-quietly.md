@@ -4,6 +4,7 @@ title: Belonging Quietly
 author: Denise Landry
 date: 2026-06-22T12:19:00.000-04:00
 heroImage: /uploads/pexels-davegarcia-31039051.jpg
+heroCaption: Photo by Dave Garcie on Pexels.com.
 excerpt: Noise has never frightened me. It is only another landscape to read.
 bodyBlocks:
   - type: text
