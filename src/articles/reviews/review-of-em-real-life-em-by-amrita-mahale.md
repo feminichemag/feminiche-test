@@ -14,8 +14,8 @@ bodyBlocks:
       differently. ” – Amrita Mahale, <em>Real Life</em>
   - type: text
     text: >
-      Amrita Mahale’s Real Life is literary fiction wrapped in mystery, set
-      against the picturesque Mahamaya Valley in the Himalayas. Tara, a
+      Amrita Mahale’s <em>Real Life</em> is literary fiction wrapped in mystery,
+      set against the picturesque Mahamaya Valley in the Himalayas. Tara, a
       microbiologist, is last seen there, before she disappears without leaving
       a trace. Her childhood friend Mansi, stifled in an unhappy marriage,
       answers the whispers of the mountains to investigate. 
@@ -48,7 +48,7 @@ bodyBlocks:
       Mahale switches from vividly depicting Tara Kumar's conflicted thoughts to psychologically deducing the mind of a man with a fragile ego. She speaks the characters’ language and voices their intentions effectively.
 
 
-      Real Life seamlessly blends feminism and female friendship with other persisting issues that plague the world at large. For instance, there's an ongoing debate about AI replacing humans, which Mahale has subtly commented on.
+      <em>Real Life</em> seamlessly blends feminism and female friendship with other persisting issues that plague the world at large. For instance, there's an ongoing debate about AI replacing humans, which Mahale has subtly commented on.
   - type: quote
     text: ”He had happily outsourced these tedious functions to his smartphone—to
       his AI overlords as Tara had once put it. In Jora, where none of the
@@ -64,9 +64,9 @@ bodyBlocks:
   - type: quote
     text: ”Our Mahamaya is a silent witness, and sometimes a ruthless accomplice, to
       the most heinous acts.”
-outro: Real Life by Amrita Mahale isn't a work to be critiqued, but rather
-  quietly contemplated for its rich prose. Its visceral quality lingers long
-  after the pages are turned. The book poses an important question to
+outro: <em>Real Life</em> by Amrita Mahale isn't a work to be critiqued, but
+  rather quietly contemplated for its rich prose. Its visceral quality lingers
+  long after the pages are turned. The book poses an important question to
   readers—what remains when certainty disappears?
 authorBio: Aparna Prabhu has been a content creator and book blogger for six
   years. She openly advocates for mental health by focusing on her own
