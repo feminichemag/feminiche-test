@@ -64,10 +64,12 @@ bodyBlocks:
   - type: quote
     text: ”Our Mahamaya is a silent witness, and sometimes a ruthless accomplice, to
       the most heinous acts.”
-outro: <em>Real Life</em> by Amrita Mahale isn't a work to be critiqued, but
-  rather quietly contemplated for its rich prose. Its visceral quality lingers
-  long after the pages are turned. The book poses an important question to
-  readers—what remains when certainty disappears?
+  - type: text
+    text: <em>Real Life</em> by Amrita Mahale isn't a work to be critiqued, but
+      rather quietly contemplated for its rich prose. Its visceral quality
+      lingers long after the pages are turned. The book poses an important
+      question to readers—what remains when certainty disappears?
+outro: ""
 authorBio: Aparna Prabhu has been a content creator and book blogger for six
   years. She openly advocates for mental health by focusing on her own
   struggles. She has also been a runner-up in the 2026 best microblog category
