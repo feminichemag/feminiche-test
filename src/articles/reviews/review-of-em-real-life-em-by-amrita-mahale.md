@@ -55,9 +55,9 @@ bodyBlocks:
       mountain trails was on Google Maps, he was powerless.”
   - type: text
     text: >
-      Some parts of Mahale's writing reminded me of Jissa Jose's work Mudritha
-      where the mystery of the missing woman is a lesson in gender roles and
-      societal expectations.
+      Some parts of Mahale's writing reminded me of Jissa Jose's work
+      <em>Mudritha</em> where the mystery of the missing woman is a lesson in
+      gender roles and societal expectations.
 
 
       Through Mansi's point of view, we travel along the hairpin curve of Jora, taking in the sights and smells. The wildlife biologist’s role is succinctly described in a sentence—to distill facts about animals and how they live, facts that are essential to protecting these species and their habitats. The gurgling Mahamaya river acts as more than a mute spectator, with buried secrets on its shores and within it. 
