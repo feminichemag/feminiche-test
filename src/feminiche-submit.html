@@ -393,6 +393,48 @@
 
     .btn-email:hover { background: var(--neon-dim); }
 
+    /* ── NEWSLETTER ── */
+    .newsletter-strip {
+      background: #4A1528;
+      padding: 56px 48px;
+      text-align: center;
+    }
+
+    .newsletter-strip h3 {
+      font-size: 36px;
+      font-weight: 700;
+      color: #F5EBE0;
+      letter-spacing: -0.02em;
+    }
+
+    .newsletter-strip h3 em {
+      color: var(--neon);
+      font-style: italic;
+    }
+
+    .newsletter-strip p {
+      font-style: italic;
+      font-size: 17px;
+      color: var(--green-light);
+      margin-top: 8px;
+    }
+
+    .beehiiv-embed-wrapper {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-top: 28px;
+    }
+    .beehiiv-embed-wrapper > * {
+      max-width: 480px !important;
+      width: 100% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    iframe[src*="beehiiv"] {
+      background: transparent !important;
+    }
+
     footer {
       background: #2D0A18;
       color: var(--sand);
@@ -482,6 +524,9 @@
       }
 
       .btn-email { width: 100%; text-align: center; }
+
+      .newsletter-strip { padding: 40px 18px; }
+      .newsletter-strip h3 { font-size: 28px; }
 
       footer { grid-template-columns: 1fr; padding: 36px 18px; gap: 28px; }
       .footer-bottom { padding: 14px 18px; }
@@ -645,6 +690,13 @@
   <div class="submit-cta">
     <p>Ready? Send your work to <span>feminichemag@gmail.com</span></p>
     <a href="mailto:feminichemag@gmail.com" class="btn-email">Submit Now</a>
+  </div>
+
+  <!-- Newsletter -->
+  <div class="newsletter-strip" id="newsletter">
+    <h3>Not ready to submit? Stay in the <em style="color:#FF2D8A;">niche.</em></h3>
+    <p>New essays, fiction, and culture takes, straight to your inbox.</p>
+    <div class="beehiiv-embed-wrapper"><script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="75377f8d-9dbe-44bc-b436-7294fdd1f52f"></script></div>
   </div>
 
   <footer>
