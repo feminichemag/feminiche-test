@@ -419,6 +419,81 @@
       text-transform: uppercase;
     }
 
+    /* ── SECTION ROW (horizontal scroll) ── */
+    .section-block {
+      max-width: 1200px;
+      margin: 56px auto 0;
+      padding: 0 48px;
+    }
+
+    .section-block-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .section-block-title-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .section-block-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--neon);
+      font-weight: 700;
+    }
+
+    .section-block-title {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    .section-block-seeall {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sand);
+      white-space: nowrap;
+      border-bottom: 1px solid var(--divider);
+      padding-bottom: 2px;
+      transition: color 0.18s, border-color 0.18s;
+    }
+
+    .section-block-seeall:hover { color: var(--neon); border-color: var(--neon); }
+
+    .section-scroll-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      margin: 0 -48px;
+      padding: 0 48px;
+    }
+
+    .section-scroll-wrapper::-webkit-scrollbar { display: none; }
+
+    .section-scroll-track {
+      display: flex;
+      gap: 28px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .section-scroll-track .article-card {
+      flex: 0 0 300px;
+      scroll-snap-align: start;
+    }
+
+    .section-scroll-track .article-card-img,
+    .section-scroll-track img {
+      width: 300px;
+    }
+
     /* ── OBSESSIONS STRIP ── */
     .obsessions-strip {
       background: var(--ink);
@@ -786,11 +861,6 @@
 
     /* ── MOBILE ── */
     @media (max-width: 768px) {
-      .archive-scroll-wrapper { padding: 0 0 0 18px !important; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-      .archive-grid { grid-template-columns: repeat(3, 280px) !important; gap: 20px !important; padding-right: 18px; }
-      .archive-scroll-wrapper { border-bottom: none !important; padding-bottom: 0 !important; }
-
-
       header { padding: 0 18px; }
       .header-top { padding: 13px 0 11px; }
       .header-tagline { display: none; }
@@ -820,6 +890,16 @@
       .hero-sidebar { padding-left: 0; margin-top: 8px; }
 
       .section-header { padding: 0 18px; margin-top: 36px; }
+
+      .section-block { padding: 0 18px; margin-top: 40px; }
+      .section-block-title-group { flex-direction: column; align-items: flex-start; gap: 2px; }
+      .section-block-eyebrow { font-size: 9px; letter-spacing: 0.18em; }
+      .section-block-title { font-size: 24px; }
+      .section-block-header { align-items: flex-start; }
+      .section-scroll-wrapper { margin: 0 -18px; padding: 0 18px; }
+      .section-scroll-track .article-card { flex: 0 0 240px; }
+      .section-scroll-track .article-card-img,
+      .section-scroll-track img { width: 240px; }
 
       .article-grid {
         grid-template-columns: 1fr;
@@ -936,6 +1016,11 @@
     });
   </script>
 
+ <!-- Mission Statement -->
+  <div style="max-width:1200px;margin:40px auto 0;padding:0 48px;border-bottom:1px solid var(--divider);padding-bottom:40px;">
+    <p style="font-size:18px;line-height:1.8;color:var(--ink);font-style:italic;">Femi<span style="color:#FF2D8A;">NICHE</span> is an independent women-run culture and literary magazine publishing essays, criticism, poetry, fiction, interviews, and reviews. We are interested in work by both emerging and experienced writers that interrogates womanhood and contemporary life&mdash;with a strong voice and a clear point of view.</p>
+  </div>
+
  <!-- Hero -->
   <section class="hero">
     <div class="hero-main">
@@ -948,7 +1033,14 @@
 
    <aside class="contributor-spotlight">
       <div class="spotlight-label">Spotlight</div>
-      <img src="/uploads/alaina.jpeg" alt="Alaina Hammond" style="width:80px;height:80px;border-radius:50%;object-fit:cover;display:block;" />
+      <img src="/uploads/mariam.jpg" alt="Mariam Awad" style="width:80px;height:80px;border-radius:50%;object-fit:cover;display:block;" />
+      <p class="spotlight-name">Mariam Awad</p>
+      <p class="spotlight-role">Editor in Chief</p>
+      <div class="spotlight-socials">
+        <a href="https://instagram.com/mariamtawad" target="_blank">&#128247; @mariamtawad</a>
+        <a href="https://x.com/maybemariam" target="_blank">&#120143; @maybemariam</a>
+      </div>
+      <img src="/uploads/alaina.jpeg" alt="Alaina Hammond" style="width:80px;height:80px;border-radius:50%;object-fit:cover;display:block;margin-top:28px;" />
       <p class="spotlight-name">Alaina Hammond</p>
       <p class="spotlight-role">Essayist, Prose Editor</p>
      <div class="spotlight-socials">
@@ -956,180 +1048,195 @@
       </div>
       <p style="font-size:14px;font-style:italic;color:var(--muted);margin-top:12px;line-height:1.6;">Alaina Hammond is thrilled to be a contributor to FemiNICHE magazine!</p>
       <a href="/a-late-bloomer%E2%80%99s-blood" class="spotlight-link">Read her latest &rarr;</a>
-      <img src="/uploads/mariam.jpg" alt="Mariam Awad" style="width:80px;height:80px;border-radius:50%;object-fit:cover;display:block;margin-top:28px;" />
-      <p class="spotlight-name">Mariam Awad</p>
-      <p class="spotlight-role">Editor in Chief</p>
-      <div class="spotlight-socials">
-        <a href="https://instagram.com/mariamtawad" target="_blank">&#128247; @mariamtawad</a>
-        <a href="https://x.com/maybemariam" target="_blank">&#120143; @maybemariam</a>
-      </div>
-     <a href="thanksgiving-1983.html" class="spotlight-link">Read her latest &rarr;</a>
     </aside>
   </section>
 
-  <!-- Mission Statement -->
-  <div style="max-width:1200px;margin:48px auto 0;padding:0 48px;border-bottom:1px solid var(--divider);padding-bottom:48px;">
-    <p style="font-size:18px;line-height:1.8;color:var(--ink);font-style:italic;">Femi<span style="color:#FF2D8A;">NICHE</span> is an independent women-run culture and literary magazine publishing essays, criticism, poetry, fiction, interviews, and reviews. We are interested in work by both emerging and experienced writers that interrogates womanhood and contemporary life&mdash;with a strong voice and a clear point of view.</p>
-  </div>
-
-  <!-- Latest -->
-  <div class="section-header">
-    <h2>Latest</h2>
-    <div class="section-header-line"></div>
-    <span class="section-header-tag">New</span>
-  </div>
-
-  <div class="article-grid">
-    <div class="article-card">
-  <img src="/uploads/amrita.jpg" alt="Review of <em>Real Life</em> by Amrita Mahale" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
-  <span class="article-card-cat">Reviews</span>
-  <a href="https://feminichemag.com/review-of-em-real-life-em-by-amrita-mahale"><h3 class="article-card-title">Review of <em>Real Life</em> by Amrita Mahale</h3></a>
-  <p class="article-card-excerpt"><em>Real Life</em> seamlessly blends feminism and female friendship with other persisting issues that plague the world at large.</p>
-  <p class="article-card-meta">Aparna Prabhu &nbsp;&middot;&nbsp; June 25, 2026</p>
-</div>
-    <div class="article-card">
-  <img src="/uploads/pexels-davegarcia-31039051.jpg" alt="Belonging Quietly" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
-  <span class="article-card-cat">Fiction</span>
-  <a href="https://feminichemag.com/belonging-quietly"><h3 class="article-card-title">Belonging Quietly</h3></a>
-  <p class="article-card-excerpt">Noise has never frightened me. It is only another landscape to read.</p>
-  <p class="article-card-meta">Denise Landry &nbsp;&middot;&nbsp; June 19, 2026</p>
-</div>
-    <div class="article-card">
-  <img src="/uploads/pexels-yusronell-11015089.jpg" alt="To Touch Burgess Falls and The Scarecrow" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
-  <span class="article-card-cat">Poetry</span>
-  <a href="https://feminichemag.com/to-touch-burgess-falls-and-the-scarecrow"><h3 class="article-card-title">"To Touch Burgess Falls" and "The Scarecrow"</h3></a>
-  <p class="article-card-excerpt">Her tongue, the falls, softly licks my olive shoulders / that rise to breath and sheltering slender hands.</p>
-  <p class="article-card-meta">Korrine Key &nbsp;&middot;&nbsp; June 19, 2026</p>
-</div>
-    <div class="article-card">
-  <img src="/uploads/pexels-alexeydemidov-10835493.jpg" alt="Three Poems by Emily Vogel" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
-  <span class="article-card-cat">Poetry</span>
-  <a href="https://feminichemag.com/three-poems-by-emily-vogel"><h3 class="article-card-title">Three Poems by Emily Vogel</h3></a>
-  <p class="article-card-excerpt">Time is a gallery of women dancing, swinging scarves and creating the illusion of rainbows.</p>
-  <p class="article-card-meta">Emily Vogel &nbsp;&middot;&nbsp; June 15, 2026</p>
-</div>
-    <div class="article-card">
-  <img src="/uploads/rezel.jpg" alt="The House I Could Not Return To Lightly" and "The Religion of Achievement" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
-  <span class="article-card-cat">Poetry</span>
-  <a href="https://feminichemag.com/the-house-i-could-not-return-to-lightly-and-the-religion-of-achievement"><h3 class="article-card-title">"The House I Could Not Return To Lightly" and "The Religion of Achievement"</h3></a>
-  <p class="article-card-excerpt">There were days / home felt heavier than grief. / Not because it lacked love. / Because it carried too much of it.</p>
-  <p class="article-card-meta">Rezel Perohan &nbsp;&middot;&nbsp; June 15, 2026</p>
-</div>
-    <div class="article-card">
-  <img src="/uploads/steve-carell.webp" alt="<em>Rooster</em> and <em>Mad Mabel</em>" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
-  <span class="article-card-cat">Obsessions</span>
-  <a href="https://feminichemag.com/em-rooster-em-and-em-mad-mabel-em"><h3 class="article-card-title"><em>Rooster</em> and <em>Mad Mabel</em></h3></a>
-  <p class="article-card-excerpt">Everyone in <em>Rooster</em> is a little messy and I am here for it. / <em>Mad Mabel</em> by Sally Hepworth is an exemplar of literary voice.</p>
-  <p class="article-card-meta">Amy Kelly &nbsp;&middot;&nbsp; June 14, 2026</p>
-</div>
-    <div class="article-card">
-  <img src="/uploads/pexels-pixabay-276460.jpg" alt="Three Poems by Cleo Griffith" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
-  <span class="article-card-cat">Poetry</span>
-  <a href="https://feminichemag.com/three-poems-by-cleo-griffith"><h3 class="article-card-title">Three Poems by Cleo Griffith</h3></a>
-  <p class="article-card-excerpt">This was not the plan&mdash;to grow old. / In youth&rsquo;s brief time youth seemed forever&mdash; how cruel.</p>
-  <p class="article-card-meta">Cleo Griffith &nbsp;&middot;&nbsp; June 12, 2026</p>
-</div>
-    <div class="article-card">
-  <img src="/uploads/chappell1.jpg" alt="Access Denied: female celebrity and the ties that will not bind" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
-  <span class="article-card-cat">The Discourse</span>
-  <a href="/access-denied-female-celebrity-and-the-ties-that-will-not-bind/"><h3 class="article-card-title">Access Denied: female celebrity and the ties that will not bind</h3></a>
-  <p class="article-card-excerpt">Chappell Roan is not just another pop star acting out. She&rsquo;s a case study in the structural refusal to perform compliance.</p>
-  <p class="article-card-meta">Jenny Susanto-Lee &nbsp;&middot;&nbsp; June 5, 2026</p>
-</div>
-    <div class="article-card">
-  <img src="/uploads/Arash_Kamangir_statue_3.JPG" alt="Three Poems by Bänoo Zan" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
-  <span class="article-card-cat">Poetry</span>
-  <a href="/three-poems-by-bänoo-zan/"><h3 class="article-card-title">Three Poems by B&auml;noo Zan</h3></a>
-  <p class="article-card-excerpt">We are so alive / a thousand thousand deaths / won&rsquo;t bring us to our knees</p>
-  <p class="article-card-meta">B&auml;noo Zan &nbsp;&middot;&nbsp; June 4, 2026</p>
-</div>
-    <div class="article-card">
-  <img src="/uploads/Neff_Halloween_Party_-_Austin_Texas,_2022_-_28.jpg" alt="Three Poems by Alison Stone" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
-  <span class="article-card-cat">Poetry</span>
-  <a href="/three-poems-by-alison-stone/"><h3 class="article-card-title">Three Poems by Alison Stone</h3></a>
-  <p class="article-card-excerpt">Squirrels, I&rsquo;ve read, forget / where they&rsquo;ve hidden a third of their nuts. / I&rsquo;ve forgotten where I&rsquo;ve hidden / more than a third of my pain.</p>
-  <p class="article-card-meta">Alison Stone &nbsp;&middot;&nbsp; June 2, 2026</p>
-</div>
-    <div class="article-card">
-  <img src="/uploads/service-pnp-cph-3b20000-3b22000-3b22500-3b22541r.jpg" alt="Ladylike" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
-  <span class="article-card-cat">Essays</span>
-  <a href="/ladylike/"><h3 class="article-card-title">Ladylike</h3></a>
-  <p class="article-card-excerpt">There was more than just water separating factors in the South during the 1950s.</p>
-  <p class="article-card-meta">B.A. Brittingham &nbsp;&middot;&nbsp; June 2, 2026</p>
-</div>
-    <div class="article-card">
-  <img src="/uploads/pexels-iriser-1233416.jpg" alt="A Late Bloomer's Blood" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
-  <span class="article-card-cat">Essays</span>
-  <a href="a-late-bloomer%E2%80%99s-blood"><h3 class="article-card-title">A Late Bloomer's Blood</h3></a>
-  <p class="article-card-excerpt">I didn't get an official award when we graduated eighth grade. No ribbon to label me as &ldquo;Last Non-Menstruating Girl.&rdquo; I didn't need one. Everyone knew.</p>
-  <p class="article-card-meta">Alaina Hammond &nbsp;&middot;&nbsp; May 31, 2026</p>
-</div>
-    <div class="article-card">
-  <img src="/uploads/pexels-odin-reyna-383507-8410648-1-.jpg" alt="Modern Victorian Healthcare" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
-  <span class="article-card-cat">Essays</span>
-  <a href="modern-victorian-healthcare.html"><h3 class="article-card-title">Modern Victorian Healthcare</h3></a>
-  <p class="article-card-excerpt">The beautiful daughter of Ajax, Cassandra, was given the gift of knowledge and prophecy by Apollo, only to be cursed to never be heard.</p>
-  <p class="article-card-meta">Alima Shahid &nbsp;&middot;&nbsp; May 24, 2026</p>
-</div>
+  <!-- The Discourse -->
+  <div class="section-block">
+    <div class="section-block-header">
+      <div class="section-block-title-group">
+        <span class="section-block-eyebrow">Pop Culture</span>
+        <h2 class="section-block-title">The Discourse</h2>
+      </div>
+      <a href="the-discourse.html" class="section-block-seeall">See all &rarr;</a>
+    </div>
+    <div class="section-scroll-wrapper">
+      <div class="section-scroll-track">
         <div class="article-card">
-      <img src="emily-in-paris-greece.jpg" alt="Emily in Paris" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
-      <span class="article-card-cat">The Discourse</span>
-      <a href="emily-in-paris.html"><h3 class="article-card-title"><em>Emily in Paris</em> Ending is a Loss for Television</h3></a>
-      <p class="article-card-excerpt">Emily's Visa is FINALLY expiring. And I might be the only person on earth not thrilled about it.</p>
-      <p class="article-card-meta">Shana Yousef &nbsp;&middot;&nbsp; May 24, 2026</p>
+          <img src="/uploads/chappell1.jpg" alt="Access Denied: female celebrity and the ties that will not bind" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
+          <span class="article-card-cat">The Discourse</span>
+          <a href="/access-denied-female-celebrity-and-the-ties-that-will-not-bind/"><h3 class="article-card-title">Access Denied: female celebrity and the ties that will not bind</h3></a>
+          <p class="article-card-excerpt">Chappell Roan is not just another pop star acting out. She&rsquo;s a case study in the structural refusal to perform compliance.</p>
+          <p class="article-card-meta">Jenny Susanto-Lee &nbsp;&middot;&nbsp; June 5, 2026</p>
+        </div>
+        <div class="article-card">
+          <img src="emily-in-paris-greece.jpg" alt="Emily in Paris" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
+          <span class="article-card-cat">The Discourse</span>
+          <a href="emily-in-paris.html"><h3 class="article-card-title"><em>Emily in Paris</em> Ending is a Loss for Television</h3></a>
+          <p class="article-card-excerpt">Emily's Visa is FINALLY expiring. And I might be the only person on earth not thrilled about it.</p>
+          <p class="article-card-meta">Shana Yousef &nbsp;&middot;&nbsp; May 24, 2026</p>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Obsessions Strip -->
-  <div class="obsessions-strip">
-    <div class="obsessions-label">We're Obsessed With</div>
-    <div class="obsession-item">
-      <span class="obsession-type">Colour</span>
-      <span class="obsession-title">Olive Green</span>
+  <!-- Poetry -->
+  <div class="section-block">
+    <div class="section-block-header">
+      <div class="section-block-title-group">
+        <span class="section-block-eyebrow">Creative Writing</span>
+        <h2 class="section-block-title">Poetry</h2>
+      </div>
+      <a href="poetry.html" class="section-block-seeall">See all &rarr;</a>
     </div>
-    <div class="obsession-item">
-      <span class="obsession-type">Artist</span>
-      <span class="obsession-title">The Weeknd</span>
-    </div>
-    <div class="obsession-item">
-      <span class="obsession-type">Film</span>
-      <span class="obsession-title"><em>Whiplash</em> (2014)</span>
-    </div>
-    <div class="obsession-item">
-      <span class="obsession-type">Making</span>
-      <span class="obsession-title">Homemade Zines</span>
+    <div class="section-scroll-wrapper">
+      <div class="section-scroll-track">
+        <div class="article-card">
+          <img src="/uploads/pexels-yusronell-11015089.jpg" alt="To Touch Burgess Falls and The Scarecrow" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
+          <span class="article-card-cat">Poetry</span>
+          <a href="https://feminichemag.com/to-touch-burgess-falls-and-the-scarecrow"><h3 class="article-card-title">"To Touch Burgess Falls" and "The Scarecrow"</h3></a>
+          <p class="article-card-excerpt">Her tongue, the falls, softly licks my olive shoulders / that rise to breath and sheltering slender hands.</p>
+          <p class="article-card-meta">Korrine Key &nbsp;&middot;&nbsp; June 19, 2026</p>
+        </div>
+        <div class="article-card">
+          <img src="/uploads/pexels-alexeydemidov-10835493.jpg" alt="Three Poems by Emily Vogel" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
+          <span class="article-card-cat">Poetry</span>
+          <a href="https://feminichemag.com/three-poems-by-emily-vogel"><h3 class="article-card-title">Three Poems by Emily Vogel</h3></a>
+          <p class="article-card-excerpt">Time is a gallery of women dancing, swinging scarves and creating the illusion of rainbows.</p>
+          <p class="article-card-meta">Emily Vogel &nbsp;&middot;&nbsp; June 15, 2026</p>
+        </div>
+        <div class="article-card">
+          <img src="/uploads/rezel.jpg" alt="The House I Could Not Return To Lightly and The Religion of Achievement" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
+          <span class="article-card-cat">Poetry</span>
+          <a href="https://feminichemag.com/the-house-i-could-not-return-to-lightly-and-the-religion-of-achievement"><h3 class="article-card-title">"The House I Could Not Return To Lightly" and "The Religion of Achievement"</h3></a>
+          <p class="article-card-excerpt">There were days / home felt heavier than grief. / Not because it lacked love. / Because it carried too much of it.</p>
+          <p class="article-card-meta">Rezel Perohan &nbsp;&middot;&nbsp; June 15, 2026</p>
+        </div>
+        <div class="article-card">
+          <img src="/uploads/pexels-pixabay-276460.jpg" alt="Three Poems by Cleo Griffith" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
+          <span class="article-card-cat">Poetry</span>
+          <a href="https://feminichemag.com/three-poems-by-cleo-griffith"><h3 class="article-card-title">Three Poems by Cleo Griffith</h3></a>
+          <p class="article-card-excerpt">This was not the plan&mdash;to grow old. / In youth&rsquo;s brief time youth seemed forever&mdash; how cruel.</p>
+          <p class="article-card-meta">Cleo Griffith &nbsp;&middot;&nbsp; June 12, 2026</p>
+        </div>
+        <div class="article-card">
+          <img src="/uploads/Arash_Kamangir_statue_3.JPG" alt="Three Poems by Bänoo Zan" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
+          <span class="article-card-cat">Poetry</span>
+          <a href="/three-poems-by-bänoo-zan/"><h3 class="article-card-title">Three Poems by B&auml;noo Zan</h3></a>
+          <p class="article-card-excerpt">We are so alive / a thousand thousand deaths / won&rsquo;t bring us to our knees</p>
+          <p class="article-card-meta">B&auml;noo Zan &nbsp;&middot;&nbsp; June 4, 2026</p>
+        </div>
+        <div class="article-card">
+          <img src="/uploads/Neff_Halloween_Party_-_Austin_Texas,_2022_-_28.jpg" alt="Three Poems by Alison Stone" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
+          <span class="article-card-cat">Poetry</span>
+          <a href="/three-poems-by-alison-stone/"><h3 class="article-card-title">Three Poems by Alison Stone</h3></a>
+          <p class="article-card-excerpt">Squirrels, I&rsquo;ve read, forget / where they&rsquo;ve hidden a third of their nuts. / I&rsquo;ve forgotten where I&rsquo;ve hidden / more than a third of my pain.</p>
+          <p class="article-card-meta">Alison Stone &nbsp;&middot;&nbsp; June 2, 2026</p>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Archive Feature (compact) -->
-  <div class="section-header" style="margin-top: 52px;">
-    <h2>From the Archive</h2>
-    <div class="section-header-line"></div>
-  </div>
-  <div class="archive-scroll-wrapper" style="max-width:1200px;margin:24px auto 0;padding:0 48px 0;border-bottom:1px solid var(--divider);padding-bottom:52px;">
-  <div class="archive-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;">
-    <div class="article-card">
-      <img src="diva-bleach-hero.png" alt="Diva Bleach" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
-      <span class="article-card-cat">Interviews &nbsp;/&nbsp; Archive</span>
-      <a href="diva-bleach.html"><h3 class="article-card-title">What's New with Diva Bleach?</h3></a>
-      <p class="article-card-excerpt">We spent 30 minutes with Sydney Roten and Brie Ritter on Zoom to discuss everything Diva Bleach.</p>
-      <p class="article-card-meta">April 2, 2024</p>
+  <!-- Reviews -->
+  <div class="section-block">
+    <div class="section-block-header">
+      <div class="section-block-title-group">
+        <span class="section-block-eyebrow">Pop Culture</span>
+        <h2 class="section-block-title">Reviews</h2>
+      </div>
+      <a href="reviews.html" class="section-block-seeall">See all &rarr;</a>
     </div>
-    <div class="article-card">
-      <img src="holly-madison-hero.png" alt="Holly Madison" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
-      <span class="article-card-cat">Interviews &nbsp;/&nbsp; Archive</span>
-      <a href="holly-madison.html"><h3 class="article-card-title">Holly Madison on Autism, Female Stardom, and the Stories We Were Never Told</h3></a>
-      <p class="article-card-excerpt">A conversation about neurodivergence, the Playboy mansion, and rewriting your own story.</p>
-      <p class="article-card-meta">July 7, 2024</p>
-    </div>
-    <div class="article-card">
-      <img src="thanksgiving-1983-hero.jpg" alt="Thanksgiving Weekend, 1983" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
-      <span class="article-card-cat">Fiction &nbsp;/&nbsp; Archive</span>
-      <a href="thanksgiving-1983.html"><h3 class="article-card-title">&ldquo;Thanksgiving Weekend, 1983&rdquo;</h3></a>
-      <p class="article-card-excerpt">&ldquo;I want to savour this moment, this fleeting morsel of peace and nostalgia we&rsquo;ve found ourselves with.&rdquo;</p>
-      <p class="article-card-meta">Mariam Awad &nbsp;&middot;&nbsp; May 22, 2026</p>
+    <div class="section-scroll-wrapper">
+      <div class="section-scroll-track">
+        <div class="article-card">
+          <img src="/uploads/amrita.jpg" alt="Review of Real Life by Amrita Mahale" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
+          <span class="article-card-cat">Reviews</span>
+          <a href="https://feminichemag.com/review-of-em-real-life-em-by-amrita-mahale"><h3 class="article-card-title">Review of <em>Real Life</em> by Amrita Mahale</h3></a>
+          <p class="article-card-excerpt"><em>Real Life</em> seamlessly blends feminism and female friendship with other persisting issues that plague the world at large.</p>
+          <p class="article-card-meta">Aparna Prabhu &nbsp;&middot;&nbsp; June 25, 2026</p>
+        </div>
+      </div>
     </div>
   </div>
+
+  <!-- Fiction -->
+  <div class="section-block">
+    <div class="section-block-header">
+      <div class="section-block-title-group">
+        <span class="section-block-eyebrow">Creative Writing</span>
+        <h2 class="section-block-title">Fiction</h2>
+      </div>
+      <a href="fiction.html" class="section-block-seeall">See all &rarr;</a>
+    </div>
+    <div class="section-scroll-wrapper">
+      <div class="section-scroll-track">
+        <div class="article-card">
+          <img src="/uploads/pexels-davegarcia-31039051.jpg" alt="Belonging Quietly" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
+          <span class="article-card-cat">Fiction</span>
+          <a href="https://feminichemag.com/belonging-quietly"><h3 class="article-card-title">Belonging Quietly</h3></a>
+          <p class="article-card-excerpt">Noise has never frightened me. It is only another landscape to read.</p>
+          <p class="article-card-meta">Denise Landry &nbsp;&middot;&nbsp; June 19, 2026</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Obsessions -->
+  <div class="section-block">
+    <div class="section-block-header">
+      <div class="section-block-title-group">
+        <span class="section-block-eyebrow">Pop Culture</span>
+        <h2 class="section-block-title">Obsessions</h2>
+      </div>
+      <a href="obsessions.html" class="section-block-seeall">See all &rarr;</a>
+    </div>
+    <div class="section-scroll-wrapper">
+      <div class="section-scroll-track">
+        <div class="article-card">
+          <img src="/uploads/steve-carell.webp" alt="Rooster and Mad Mabel" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
+          <span class="article-card-cat">Obsessions</span>
+          <a href="https://feminichemag.com/em-rooster-em-and-em-mad-mabel-em"><h3 class="article-card-title"><em>Rooster</em> and <em>Mad Mabel</em></h3></a>
+          <p class="article-card-excerpt">Everyone in <em>Rooster</em> is a little messy and I am here for it. / <em>Mad Mabel</em> by Sally Hepworth is an exemplar of literary voice.</p>
+          <p class="article-card-meta">Amy Kelly &nbsp;&middot;&nbsp; June 14, 2026</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Essays -->
+  <div class="section-block" style="margin-bottom: 56px;">
+    <div class="section-block-header">
+      <div class="section-block-title-group">
+        <span class="section-block-eyebrow">Creative Writing</span>
+        <h2 class="section-block-title">Essays</h2>
+      </div>
+      <a href="essays.html" class="section-block-seeall">See all &rarr;</a>
+    </div>
+    <div class="section-scroll-wrapper">
+      <div class="section-scroll-track">
+        <div class="article-card">
+          <img src="/uploads/service-pnp-cph-3b20000-3b22000-3b22500-3b22541r.jpg" alt="Ladylike" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
+          <span class="article-card-cat">Essays</span>
+          <a href="/ladylike/"><h3 class="article-card-title">Ladylike</h3></a>
+          <p class="article-card-excerpt">There was more than just water separating factors in the South during the 1950s.</p>
+          <p class="article-card-meta">B.A. Brittingham &nbsp;&middot;&nbsp; June 2, 2026</p>
+        </div>
+        <div class="article-card">
+          <img src="/uploads/pexels-iriser-1233416.jpg" alt="A Late Bloomer's Blood" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
+          <span class="article-card-cat">Essays</span>
+          <a href="a-late-bloomer%E2%80%99s-blood"><h3 class="article-card-title">A Late Bloomer's Blood</h3></a>
+          <p class="article-card-excerpt">I didn't get an official award when we graduated eighth grade. No ribbon to label me as &ldquo;Last Non-Menstruating Girl.&rdquo; I didn't need one. Everyone knew.</p>
+          <p class="article-card-meta">Alaina Hammond &nbsp;&middot;&nbsp; May 31, 2026</p>
+        </div>
+        <div class="article-card">
+          <img src="/uploads/pexels-odin-reyna-383507-8410648-1-.jpg" alt="Modern Victorian Healthcare" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
+          <span class="article-card-cat">Essays</span>
+          <a href="modern-victorian-healthcare.html"><h3 class="article-card-title">Modern Victorian Healthcare</h3></a>
+          <p class="article-card-excerpt">The beautiful daughter of Ajax, Cassandra, was given the gift of knowledge and prophecy by Apollo, only to be cursed to never be heard.</p>
+          <p class="article-card-meta">Alima Shahid &nbsp;&middot;&nbsp; May 24, 2026</p>
+        </div>
+      </div>
+    </div>
   </div>
 
 
