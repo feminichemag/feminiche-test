@@ -215,7 +215,7 @@
     .hero {
       display: grid;
       grid-template-columns: 1fr 360px;
-      max-width: 1200px;
+      max-width: 1320px;
       margin: 52px auto 0;
       padding: 0 48px 52px;
       border-bottom: 1px solid var(--divider);
@@ -325,7 +325,7 @@
 
     /* ── SECTION HEADER ── */
     .section-header {
-      max-width: 1200px;
+      max-width: 1320px;
       margin: 52px auto 0;
       padding: 0 48px;
       display: flex;
@@ -359,7 +359,7 @@
 
     /* ── ARTICLE GRID ── */
     .article-grid {
-      max-width: 1200px;
+      max-width: 1320px;
       margin: 28px auto 0;
       padding: 0 48px;
       display: grid;
@@ -421,7 +421,7 @@
 
     /* ── SECTION ROW (horizontal scroll) ── */
     .section-block {
-      max-width: 1200px;
+      max-width: 1320px;
       margin: 56px auto 0;
       padding: 0 48px;
     }
@@ -485,13 +485,37 @@
     }
 
     .section-scroll-track .article-card {
-      flex: 0 0 300px;
+      flex: 1 1 300px;
+      max-width: 420px;
       scroll-snap-align: start;
     }
 
     .section-scroll-track .article-card-img,
     .section-scroll-track img {
-      width: 300px;
+      width: 100%;
+    }
+
+    /* Featured variant (larger cards, for thin sections like The Discourse) */
+    .section-scroll-track--featured {
+      gap: 36px;
+    }
+
+    .section-scroll-track--featured .article-card {
+      flex: 1 1 420px;
+      max-width: 600px;
+    }
+
+    .section-scroll-track--featured .article-card-img,
+    .section-scroll-track--featured img {
+      width: 100%;
+    }
+
+    .section-scroll-track--featured .article-card-title {
+      font-size: 25px;
+    }
+
+    .section-scroll-track--featured .article-card-excerpt {
+      font-size: 16px;
     }
 
     /* ── OBSESSIONS STRIP ── */
@@ -614,7 +638,7 @@
 
     /* ── INSTAGRAM SECTION ── */
     .instagram-section {
-      max-width: 1200px;
+      max-width: 1320px;
       margin: 52px auto 0;
       padding: 0 48px 52px;
       border-top: 1px solid var(--divider);
@@ -645,7 +669,7 @@
 
     /* ── WIDE FEATURE ── */
     .wide-feature {
-      max-width: 1200px;
+      max-width: 1320px;
       margin: 52px auto 0;
       padding: 0 48px 52px;
       display: grid;
@@ -900,6 +924,10 @@
       .section-scroll-track .article-card { flex: 0 0 240px; }
       .section-scroll-track .article-card-img,
       .section-scroll-track img { width: 240px; }
+      .section-scroll-track--featured .article-card { flex: 0 0 280px; }
+      .section-scroll-track--featured .article-card-img,
+      .section-scroll-track--featured img { width: 280px; }
+      .section-scroll-track--featured .article-card-title { font-size: 19px; }
 
       .article-grid {
         grid-template-columns: 1fr;
@@ -1017,7 +1045,7 @@
   </script>
 
  <!-- Mission Statement -->
-  <div style="max-width:1200px;margin:40px auto 0;padding:0 48px;border-bottom:1px solid var(--divider);padding-bottom:40px;">
+  <div style="max-width:1320px;margin:40px auto 0;padding:0 48px;border-bottom:1px solid var(--divider);padding-bottom:40px;">
     <p style="font-size:18px;line-height:1.8;color:var(--ink);font-style:italic;">Femi<span style="color:#FF2D8A;">NICHE</span> is an independent women-run culture and literary magazine publishing essays, criticism, poetry, fiction, interviews, and reviews. We are interested in work by both emerging and experienced writers that interrogates womanhood and contemporary life&mdash;with a strong voice and a clear point of view.</p>
   </div>
 
@@ -1061,7 +1089,7 @@
       <a href="the-discourse.html" class="section-block-seeall">See all &rarr;</a>
     </div>
     <div class="section-scroll-wrapper">
-      <div class="section-scroll-track">
+      <div class="section-scroll-track section-scroll-track--featured">
         <div class="article-card">
           <img src="/uploads/chappell1.jpg" alt="Access Denied: female celebrity and the ties that will not bind" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
           <span class="article-card-cat">The Discourse</span>
@@ -1137,72 +1165,6 @@
     </div>
   </div>
 
-  <!-- Reviews -->
-  <div class="section-block">
-    <div class="section-block-header">
-      <div class="section-block-title-group">
-        <span class="section-block-eyebrow">Pop Culture</span>
-        <h2 class="section-block-title">Reviews</h2>
-      </div>
-      <a href="reviews.html" class="section-block-seeall">See all &rarr;</a>
-    </div>
-    <div class="section-scroll-wrapper">
-      <div class="section-scroll-track">
-        <div class="article-card">
-          <img src="/uploads/amrita.jpg" alt="Review of Real Life by Amrita Mahale" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
-          <span class="article-card-cat">Reviews</span>
-          <a href="https://feminichemag.com/review-of-em-real-life-em-by-amrita-mahale"><h3 class="article-card-title">Review of <em>Real Life</em> by Amrita Mahale</h3></a>
-          <p class="article-card-excerpt"><em>Real Life</em> seamlessly blends feminism and female friendship with other persisting issues that plague the world at large.</p>
-          <p class="article-card-meta">Aparna Prabhu &nbsp;&middot;&nbsp; June 25, 2026</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Fiction -->
-  <div class="section-block">
-    <div class="section-block-header">
-      <div class="section-block-title-group">
-        <span class="section-block-eyebrow">Creative Writing</span>
-        <h2 class="section-block-title">Fiction</h2>
-      </div>
-      <a href="fiction.html" class="section-block-seeall">See all &rarr;</a>
-    </div>
-    <div class="section-scroll-wrapper">
-      <div class="section-scroll-track">
-        <div class="article-card">
-          <img src="/uploads/pexels-davegarcia-31039051.jpg" alt="Belonging Quietly" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
-          <span class="article-card-cat">Fiction</span>
-          <a href="https://feminichemag.com/belonging-quietly"><h3 class="article-card-title">Belonging Quietly</h3></a>
-          <p class="article-card-excerpt">Noise has never frightened me. It is only another landscape to read.</p>
-          <p class="article-card-meta">Denise Landry &nbsp;&middot;&nbsp; June 19, 2026</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Obsessions -->
-  <div class="section-block">
-    <div class="section-block-header">
-      <div class="section-block-title-group">
-        <span class="section-block-eyebrow">Pop Culture</span>
-        <h2 class="section-block-title">Obsessions</h2>
-      </div>
-      <a href="obsessions.html" class="section-block-seeall">See all &rarr;</a>
-    </div>
-    <div class="section-scroll-wrapper">
-      <div class="section-scroll-track">
-        <div class="article-card">
-          <img src="/uploads/steve-carell.webp" alt="Rooster and Mad Mabel" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
-          <span class="article-card-cat">Obsessions</span>
-          <a href="https://feminichemag.com/em-rooster-em-and-em-mad-mabel-em"><h3 class="article-card-title"><em>Rooster</em> and <em>Mad Mabel</em></h3></a>
-          <p class="article-card-excerpt">Everyone in <em>Rooster</em> is a little messy and I am here for it. / <em>Mad Mabel</em> by Sally Hepworth is an exemplar of literary voice.</p>
-          <p class="article-card-meta">Amy Kelly &nbsp;&middot;&nbsp; June 14, 2026</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- Essays -->
   <div class="section-block" style="margin-bottom: 56px;">
     <div class="section-block-header">
@@ -1234,6 +1196,41 @@
           <a href="modern-victorian-healthcare.html"><h3 class="article-card-title">Modern Victorian Healthcare</h3></a>
           <p class="article-card-excerpt">The beautiful daughter of Ajax, Cassandra, was given the gift of knowledge and prophecy by Apollo, only to be cursed to never be heard.</p>
           <p class="article-card-meta">Alima Shahid &nbsp;&middot;&nbsp; May 24, 2026</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Niche Reads (Reviews + Fiction + Obsessions combined) -->
+  <div class="section-block" style="margin-bottom: 56px;">
+    <div class="section-block-header">
+      <div class="section-block-title-group">
+        <span class="section-block-eyebrow">More to Explore</span>
+        <h2 class="section-block-title"><span style="color:#FF2D8A;">Niche</span> Reads</h2>
+      </div>
+    </div>
+    <div class="section-scroll-wrapper">
+      <div class="section-scroll-track">
+        <div class="article-card">
+          <img src="/uploads/amrita.jpg" alt="Review of Real Life by Amrita Mahale" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
+          <span class="article-card-cat">Reviews</span>
+          <a href="https://feminichemag.com/review-of-em-real-life-em-by-amrita-mahale"><h3 class="article-card-title">Review of <em>Real Life</em> by Amrita Mahale</h3></a>
+          <p class="article-card-excerpt"><em>Real Life</em> seamlessly blends feminism and female friendship with other persisting issues that plague the world at large.</p>
+          <p class="article-card-meta">Aparna Prabhu &nbsp;&middot;&nbsp; June 25, 2026</p>
+        </div>
+        <div class="article-card">
+          <img src="/uploads/pexels-davegarcia-31039051.jpg" alt="Belonging Quietly" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
+          <span class="article-card-cat">Fiction</span>
+          <a href="https://feminichemag.com/belonging-quietly"><h3 class="article-card-title">Belonging Quietly</h3></a>
+          <p class="article-card-excerpt">Noise has never frightened me. It is only another landscape to read.</p>
+          <p class="article-card-meta">Denise Landry &nbsp;&middot;&nbsp; June 19, 2026</p>
+        </div>
+        <div class="article-card">
+          <img src="/uploads/steve-carell.webp" alt="Rooster and Mad Mabel" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;" />
+          <span class="article-card-cat">Obsessions</span>
+          <a href="https://feminichemag.com/em-rooster-em-and-em-mad-mabel-em"><h3 class="article-card-title"><em>Rooster</em> and <em>Mad Mabel</em></h3></a>
+          <p class="article-card-excerpt">Everyone in <em>Rooster</em> is a little messy and I am here for it. / <em>Mad Mabel</em> by Sally Hepworth is an exemplar of literary voice.</p>
+          <p class="article-card-meta">Amy Kelly &nbsp;&middot;&nbsp; June 14, 2026</p>
         </div>
       </div>
     </div>
