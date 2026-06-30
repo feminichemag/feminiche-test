@@ -4,6 +4,8 @@ title: '"You are tired, dear" and "Tool-faced"'
 author: Iulitta Ng
 date: 2026-06-30T16:14:00.000-04:00
 heroImage: /uploads/caricature_gillray_plumpudding.jpg
+heroCaption: '"The Plumb-Pudding in Danger," James Gillray, 1805. Hand-colored
+  etching. Public domain.'
 excerpt: Tabouli’s been a potluck dish for twenty years
 poems:
   - text: |
