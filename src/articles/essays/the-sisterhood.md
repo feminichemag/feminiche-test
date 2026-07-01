@@ -67,6 +67,7 @@ bodyBlocks:
 
       We all trudged through the snow into the sauna building, then helped stack the wood logs underneath the sauna’s grill. There were rocks on top of the grill that the burning wood underneath heated. Once the rocks were sufficiently hot, we’d throw ladles of water on them to create steam. 
 
+
       We returned to the house to wait until the rocks were heated. Kim thought we were in for approximately an hour-long wait. While we sat in the living room chatting for nearly an hour, I asked if they were already wearing their bathing suits.
        
       “Just our birthday suits,” the girls said, laughing.
