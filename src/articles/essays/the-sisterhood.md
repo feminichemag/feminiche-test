@@ -90,9 +90,11 @@ bodyBlocks:
       modesty—body down and firmly pressed in the sand.
        
       It’s not that you need to be naked to accept yourself, but you do need to be brave. I learned in Michigan that I didn’t need to cower in embarrassment or insecurity. So, I showed him how it was done. I slowly took off my clothes and walked to the edge of the shore. There, among all the other undressed and unconcerned, I stood proud of myself. I dipped my toe in the frigid water, then ran back to wrap myself in a blanket—not out of modesty but chill. At that moment, I felt empowered as never before.
-outro: “Women may be the one group that grows more radical as they age. So,
-  whatever you want to do, just do it…Making a damn fool of yourself is
-  absolutely essential."  -Gloria Steinem
+  - type: quote
+    text: “Women may be the one group that grows more radical as they age. So,
+      whatever you want to do, just do it…Making a damn fool of yourself is
+      absolutely essential."  -Gloria Steinem
+outro: ""
 authorBio: >
   Originally from Chicago, Marlene DeVere has lived in various parts of the
   country and in the Middle East but admits it has been the inner
