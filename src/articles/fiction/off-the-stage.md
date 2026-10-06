@@ -39,7 +39,7 @@ bodyBlocks:
       The house is dark as Kadambari eases her car into the driveway.  Letting herself in, she flicks on the lights and shuffles into her bedroom. She removes all her jewellery one by one, barring her <em>thaali</em>, and carefully places them in a box after wrapping them in a soft muslin cloth. With a wet tissue and some coconut oil, she wipes away her makeup. After a calming bath, as she plops on her bed, she notices a long strand of brown hair curled on the pillow. Reaching out for her <em>chouri</em> (false hair) on the bedside table, she examines it. It is black.
 
 
-
+      ____
 
 
       The creak of a carefully closed door makes Kadambari open her eyes. Her lids droop, but not with sleep. She pries them open and glances at the clock, though she has a fair idea of the time. It is well past midnight. At Naren’s approaching steps, she quickly turns to the side, squeezing her eyes shut. 
@@ -82,7 +82,7 @@ bodyBlocks:
       No. She would have known.
 
 
-
+      ____
 
 
       “So sorry, Kadu. Got late at work, ma. How was yesterday’s programme?”
@@ -138,7 +138,7 @@ bodyBlocks:
       Easing her back onto the swing, she rocks, holding the tumbler to her lips. The coffee has gone cold.
 
 
-
+      ____
 
 
       <em>Dhitthangita thakatharikitathaka thom,</em>
@@ -186,7 +186,7 @@ bodyBlocks:
       Kadambari’s eyes soften. She nods at them, an indulgent smile playing on her lips as she slips behind the steering wheel. The giggles fade as she raises the window.
 
 
-
+      ____
 
 
       The door creaks. Kadambari darts a quick look in its direction. <em>Naren.</em> There is an added spring in her step. Completing the <em>sutral adavu</em>, her eyes seek his shadow through the crack, and her movements deepen with anticipation. The shadow ebbs and returns. He finally steps in, but his hand remains curled around the doorknob as he quietly watches her. Executing the <em>arudhi</em> with aplomb, she turns to meet his gaze, a satisfied smile on her lips. The space is empty. The door closes in silence.
