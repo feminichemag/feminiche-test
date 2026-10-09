@@ -4,6 +4,7 @@ title: Lingering in the mind
 author: Sharon Szczerba-Gilbert
 date: 2026-10-08T21:14:00.000-04:00
 heroImage: /uploads/monet.jpg
+heroCaption: '"Springtime," Claude Monet, 1872. Oil on canvas. Public domain.'
 poems:
   - text: |+
       Though you have left my body
